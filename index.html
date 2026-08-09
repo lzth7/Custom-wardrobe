@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi personaje</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: #eadff2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .contenedor {
+            width: 100%;
+            max-width: 1000px;
+            background: #fff8ff;
+            border-radius: 25px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(80, 50, 90, 0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #70458c;
+            margin-top: 0;
+        }
+
+        .zona-personaje {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            aspect-ratio: 3 / 4;
+            margin: auto;
+            background: #d9c3df;
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .personaje-prueba {
+            font-size: 150px;
+        }
+
+        .controles {
+            margin-top: 25px;
+        }
+
+        .categoria {
+            margin-bottom: 20px;
+        }
+
+        .categoria h2 {
+            font-size: 18px;
+            color: #70458c;
+            margin-bottom: 10px;
+        }
+
+        .botones {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            border: none;
+            background: #c99ddd;
+            color: #392542;
+            padding: 10px 16px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background: #b982d0;
+        }
+
+        .aleatorio {
+            width: 100%;
+            margin-top: 10px;
+            background: #8c5aa8;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="contenedor">
+
+        <h1>✦ Mi personaje ✦</h1>
+
+        <div class="zona-personaje">
+            <div class="personaje-prueba">🧍🏻‍♀️</div>
+        </div>
+
+        <section class="controles">
+
+            <div class="categoria">
+                <h2>💇 Cabello</h2>
+
+                <div class="botones">
+                    <button onclick="cambiarOpcion('cabello', 1)">Cabello 1</button>
+                    <button onclick="cambiarOpcion('cabello', 2)">Cabello 2</button>
+                    <button onclick="cambiarOpcion('cabello', 3)">Cabello 3</button>
+                </div>
+            </div>
+
+            <div class="categoria">
+                <h2>👕 Parte superior</h2>
+
+                <div class="botones">
+                    <button onclick="cambiarOpcion('arriba', 1)">Playera 1</button>
+                    <button onclick="cambiarOpcion('arriba', 2)">Playera 2</button>
+                    <button onclick="cambiarOpcion('arriba', 3)">Sudadera</button>
+                </div>
+            </div>
+
+            <div class="categoria">
+                <h2>👖 Parte inferior</h2>
+
+                <div class="botones">
+                    <button onclick="cambiarOpcion('abajo', 1)">Pantalón 1</button>
+                    <button onclick="cambiarOpcion('abajo', 2)">Falda</button>
+                    <button onclick="cambiarOpcion('abajo', 3)">Shorts</button>
+                </div>
+            </div>
+
+            <div class="categoria">
+                <h2>👟 Zapatos</h2>
+
+                <div class="botones">
+                    <button onclick="cambiarOpcion('zapatos', 1)">Tenis 1</button>
+                    <button onclick="cambiarOpcion('zapatos', 2)">Tenis 2</button>
+                    <button onclick="cambiarOpcion('zapatos', 3)">Botas</button>
+                </div>
+            </div>
+
+            <div class="categoria">
+                <h2>🎀 Accesorios</h2>
+
+                <div class="botones">
+                    <button onclick="cambiarOpcion('accesorios', 1)">Accesorio 1</button>
+                    <button onclick="cambiarOpcion('accesorios', 2)">Accesorio 2</button>
+                    <button onclick="cambiarOpcion('accesorios', 3)">Accesorio 3</button>
+                </div>
+            </div>
+
+            <button class="aleatorio" onclick="aleatorio()">
+                🎲 Outfit aleatorio
+            </button>
+
+        </section>
+
+    </main>
+
+    <script>
+
+        let personaje = {
+            cabello: 1,
+            arriba: 1,
+            abajo: 1,
+            zapatos: 1,
+            accesorios: 1
+        };
+
+        function cambiarOpcion(categoria, opcion) {
+
+            personaje[categoria] = opcion;
+
+            console.log(personaje);
+        }
+
+        function aleatorio() {
+
+            personaje.cabello = Math.floor(Math.random() * 3) + 1;
+            personaje.arriba = Math.floor(Math.random() * 3) + 1;
+            personaje.abajo = Math.floor(Math.random() * 3) + 1;
+            personaje.zapatos = Math.floor(Math.random() * 3) + 1;
+            personaje.accesorios = Math.floor(Math.random() * 3) + 1;
+
+            console.log(personaje);
+        }
+
+    </script>
+
+</body>
+</html>
