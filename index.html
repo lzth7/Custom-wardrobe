@@ -201,60 +201,61 @@
 
     if (categoria === "arriba") {
 
-    const prenda = document.getElementById("prenda-arriba");
+        const prenda = document.getElementById("prenda-arriba");
 
-    if (opcion === 1) {
+        if (opcion === 1) {
 
-        if (prenda.src.includes("BackgroundEraser_20260810_192436170.png")) {
-            prenda.src = "";
-            personaje.arriba = 0;
-        } else {
-            prenda.src = "BackgroundEraser_20260810_192436170.png";
-            personaje.arriba = 1;
-        }
-    }
-
-    if (opcion === 2) {
-        prenda.src = "";
-        personaje.arriba = 2;
-    }
-
-    if (opcion === 3) {
-        prenda.src = "";
-        personaje.arriba = 3;
-    }
-    }
-            if (categoria === "abajo") {
-
-    const prenda = document.getElementById("prenda-abajo");
-
-    if (opcion === 1) {
-
-        if (prenda.src.includes("BackgroundEraser_20260811_130306278.png")) {
-            prenda.src = "";
-            personaje.abajo = 0;
-        } else {
-            prenda.src = "BackgroundEraser_20260811_130306278.png";
-            personaje.abajo = 1;
-        }
-    }
-
-    if (opcion === 2) {
-        prenda.src = "";
-        personaje.abajo = 2;
-    }
+            if (prenda.src.includes("BackgroundEraser_20260810_192436170.png")) {
+                prenda.src = "";
+                personaje.arriba = 0;
+            } else {
+                prenda.src = "BackgroundEraser_20260810_192436170.png";
+                personaje.arriba = 1;
             }
-    
 
-    if (opcion === 3) {
-        prenda.src = "";
-        personaje.abajo = 3;
-    }
         }
+
+        if (opcion === 2) {
+            prenda.src = "";
+            personaje.arriba = 2;
+        }
+
+        if (opcion === 3) {
+            prenda.src = "";
+            personaje.arriba = 3;
+        }
+    }
+
+    if (categoria === "abajo") {
+
+        const prenda = document.getElementById("prenda-abajo");
+
+        if (opcion === 1) {
+
+            if (prenda.src.includes("BackgroundEraser_20260811_130306278.png")) {
+                prenda.src = "";
+                personaje.abajo = 0;
+            } else {
+                prenda.src = "BackgroundEraser_20260811_130306278.png";
+                personaje.abajo = 1;
+            }
+
+        }
+
+        if (opcion === 2) {
+            prenda.src = "";
+            personaje.abajo = 2;
+        }
+
+        if (opcion === 3) {
+            prenda.src = "";
+            personaje.abajo = 3;
+        }
+    }
 
     console.log(personaje);
                 }
-
+        
         function aleatorio() {
 
             personaje.cabello = Math.floor(Math.random() * 3) + 1;
