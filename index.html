@@ -121,7 +121,7 @@
 
         <div class="zona-personaje">
     <img class="personaje-prueba" src="BackgroundEraser_20260810_011304800.png" alt="Mi personaje">
-        <img class="prenda" src="BackgroundEraser_20260810_192436170.png" alt="">
+        <img id="prenda-arriba" class="prenda" src="" alt="">
         </div>
 
         <section class="controles">
@@ -196,10 +196,27 @@
 
         function cambiarOpcion(categoria, opcion) {
 
-            personaje[categoria] = opcion;
+    personaje[categoria] = opcion;
 
-            console.log(personaje);
+    if (categoria === "arriba") {
+
+        const prenda = document.getElementById("prenda-arriba");
+
+        if (opcion === 1) {
+            prenda.src = "BackgroundEraser_20260810_192436170.png";
         }
+
+        if (opcion === 2) {
+            prenda.src = "";
+        }
+
+        if (opcion === 3) {
+            prenda.src = "";
+        }
+    }
+
+    console.log(personaje);
+                }
 
         function aleatorio() {
 
