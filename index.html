@@ -175,7 +175,7 @@
 
                 <div class="botones">
                     <button onclick="cambiarOpcion('accesorios', 1)">Bolso negro</button>
-                    <button onclick="cambiarOpcion('accesorios', 2)">Accesorio 2</button>
+                    <button onclick="cambiarOpcion('accesorios', 2)">Flor blanca</button>
                     <button onclick="cambiarOpcion('accesorios', 3)">Accesorio 3</button>
                 </div>
             </div>
@@ -348,8 +348,14 @@
     }
 
     if (opcion === 2) {
-        prenda.src = "";
-        personaje.accesorios = 2;
+
+        if (prenda.src.includes("BackgroundEraser_20260811_220750841.png")) {
+            prenda.src = "";
+            personaje.accesorios = 0;
+        } else {
+            prenda.src = "BackgroundEraser_20260811_220750841.png";
+            personaje.accesorios = 2;
+        }
     }
 
     if (opcion === 3) {
