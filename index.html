@@ -155,7 +155,7 @@
 
                 <div class="botones">
                     <button onclick="cambiarOpcion('abajo', 1)">Pantalón cargo</button>
-                    <button onclick="cambiarOpcion('abajo', 2)">Falda</button>
+                    <button onclick="cambiarOpcion('abajo', 2)">Falda de mezclilla</button>
                     <button onclick="cambiarOpcion('abajo', 3)">Shorts</button>
                 </div>
             </div>
@@ -252,8 +252,15 @@
         }
 
         if (opcion === 2) {
-            prenda.src = "";
-            personaje.abajo = 2;
+
+            if (prenda.src.includes("BackgroundEraser_20260811_214510775.png")) {
+                prenda.src = "";
+                personaje.abajo = 0;
+            } else {
+                prenda.src = "BackgroundEraser_20260811_214510775.png";
+                personaje.abajo = 2;
+            }
+
         }
 
         if (opcion === 3) {
