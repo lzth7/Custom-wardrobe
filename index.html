@@ -269,16 +269,11 @@
         }
 
         if (opcion === 3) {
-
-            if (prenda.src.includes("BackgroundEraser_20260812_140525808.png")) {
-                prenda.src = "";
-                personaje.abajo = 0;
-            } else {
-                prenda.src = "BackgroundEraser_20260812_140525808.png";
-                personaje.abajo = 3;
+        prenda.src = "";
+        personaje.abajo = 3;
             }
-
         }
+            
 
             if (categoria === "cabello") {
 
@@ -307,10 +302,15 @@
     }
 
     if (opcion === 3) {
-        prenda.src = "";
-        personaje.cabello = 3;
+
+        if (prenda.src.includes("BackgroundEraser_20260812_140525808.png")) {
+            prenda.src = "";
+            personaje.cabello = 0;
+        } else {
+            prenda.src = "BackgroundEraser_20260812_140525808.png";
+            personaje.cabello = 3;
+        }
     }
-                    }
 
             if (categoria === "zapatos") {
 
