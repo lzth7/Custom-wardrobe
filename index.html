@@ -254,6 +254,32 @@
         }
     }
 
+            if (categoria === "cabello") {
+
+    const prenda = document.getElementById("prenda-cabello");
+
+    if (opcion === 1) {
+
+        if (prenda.src.includes("BackgroundEraser_20260811_175925322.png")) {
+            prenda.src = "";
+            personaje.cabello = 0;
+        } else {
+            prenda.src = "BackgroundEraser_20260811_175925322.png";
+            personaje.cabello = 1;
+        }
+    }
+
+    if (opcion === 2) {
+        prenda.src = "";
+        personaje.cabello = 2;
+    }
+
+    if (opcion === 3) {
+        prenda.src = "";
+        personaje.cabello = 3;
+    }
+                    }
+
     console.log(personaje);
                 }
         
