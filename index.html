@@ -219,9 +219,15 @@
         }
 
         if (opcion === 2) {
-            prenda.src = "";
-            personaje.arriba = 2;
-        }
+
+    if (prenda.src.includes("BackgroundEraser_20260811_144426351.png")) {
+        prenda.src = "";
+        personaje.arriba = 0;
+    } else {
+        prenda.src = "BackgroundEraser_20260811_144426351.png";
+        personaje.arriba = 2;
+    }
+            }
 
         if (opcion === 3) {
             prenda.src = "";
