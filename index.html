@@ -146,7 +146,7 @@
                 <div class="botones">
                     <button onclick="cambiarOpcion('arriba', 1)">Lunares</button>
                     <button onclick="cambiarOpcion('arriba', 2)">Hombrera negra</button>
-                    <button onclick="cambiarOpcion('arriba', 3)">Sudadera</button>
+                    <button onclick="cambiarOpcion('arriba', 3)">Hombrera gris</button>
                 </div>
             </div>
 
@@ -230,10 +230,16 @@
             }
 
         if (opcion === 3) {
-            prenda.src = "";
-            personaje.arriba = 3;
-        }
+            
+            if (prenda.src.includes("BackgroundEraser_20260812_132838997.png")) {
+        prenda.src = "";
+        personaje.arriba = 0;
+    } else {
+        prenda.src = "BackgroundEraser_20260812_132838997.png";
+        personaje.arriba = 3;
     }
+        }
+        
 
     if (categoria === "abajo") {
 
