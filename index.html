@@ -202,44 +202,43 @@
 
     personaje[categoria] = opcion;
 
-    if (categoria === "arriba") {
+   if (categoria === "arriba") {
 
-        const prenda = document.getElementById("prenda-arriba");
+    const prenda = document.getElementById("prenda-arriba");
 
-        if (opcion === 1) {
+    if (opcion === 1) {
 
-            if (prenda.src.includes("BackgroundEraser_20260810_192436170.png")) {
-                prenda.src = "";
-                personaje.arriba = 0;
-            } else {
-                prenda.src = "BackgroundEraser_20260810_192436170.png";
-                personaje.arriba = 1;
-            }
-
+        if (prenda.src.includes("BackgroundEraser_20260810_192436170.png")) {
+            prenda.src = "";
+            personaje.arriba = 0;
+        } else {
+            prenda.src = "BackgroundEraser_20260810_192436170.png";
+            personaje.arriba = 1;
         }
-
-        if (opcion === 2) {
-
-    if (prenda.src.includes("BackgroundEraser_20260811_144426351.png")) {
-        prenda.src = "";
-        personaje.arriba = 0;
-    } else {
-        prenda.src = "BackgroundEraser_20260811_144426351.png";
-        personaje.arriba = 2;
     }
-            }
 
-        if (opcion === 3) {
-            
-            if (prenda.src.includes("BackgroundEraser_20260812_132838997.png")) {
-        prenda.src = "";
-        personaje.arriba = 0;
-    } else {
-        prenda.src = "BackgroundEraser_20260812_132838997.png";
-        personaje.arriba = 3;
-    }
+    if (opcion === 2) {
+
+        if (prenda.src.includes("BackgroundEraser_20260811_144426351.png")) {
+            prenda.src = "";
+            personaje.arriba = 0;
+        } else {
+            prenda.src = "BackgroundEraser_20260811_144426351.png";
+            personaje.arriba = 2;
         }
-        
+    }
+
+    if (opcion === 3) {
+
+        if (prenda.src.includes("BackgroundEraser_20260812_132838997.png")) {
+            prenda.src = "";
+            personaje.arriba = 0;
+        } else {
+            prenda.src = "BackgroundEraser_20260812_132838997.png";
+            personaje.arriba = 3;
+        }
+    }
+   }  
 
     if (categoria === "abajo") {
 
