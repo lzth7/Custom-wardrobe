@@ -124,6 +124,7 @@
         <img id="prenda-arriba" class="prenda" src="" alt="">
             <img id="prenda-abajo" class="prenda" src="" alt="">
             <img id="prenda-cabello" class="prenda" src="" alt="">
+            <img id="prenda-zapatos" class="prenda" src="" alt="">
         </div>
 
         <section class="controles">
@@ -279,6 +280,34 @@
         personaje.cabello = 3;
     }
                     }
+
+            if (categoria === "zapatos") {
+
+    const prenda = document.getElementById("prenda-zapatos");
+
+    if (opcion === 1) {
+
+        if (prenda.src.includes("BackgroundEraser_20260811_183640252.png
+            ")) {
+            prenda.src = "";
+            personaje.zapatos = 0;
+        } else {
+            prenda.src = "BackgroundEraser_20260811_183640252.png
+                ";
+            personaje.zapatos = 1;
+        }
+    }
+
+    if (opcion === 2) {
+        prenda.src = "";
+        personaje.zapatos = 2;
+    }
+
+    if (opcion === 3) {
+        prenda.src = "";
+        personaje.zapatos = 3;
+    }
+            }
 
     console.log(personaje);
                 }
