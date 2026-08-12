@@ -136,7 +136,7 @@
                 <div class="botones">
                     <button onclick="cambiarOpcion('cabello', 1)">Ondas de sirena</button>
                     <button onclick="cambiarOpcion('cabello', 2)">Lacio con broche</button>
-                    <button onclick="cambiarOpcion('cabello', 3)">Cabello 3</button>
+                    <button onclick="cambiarOpcion('cabello', 3)">Ondas con fleco</button>
                 </div>
             </div>
 
@@ -269,10 +269,16 @@
         }
 
         if (opcion === 3) {
-            prenda.src = "";
-            personaje.abajo = 3;
+
+            if (prenda.src.includes("BackgroundEraser_20260812_140525808.png")) {
+                prenda.src = "";
+                personaje.abajo = 0;
+            } else {
+                prenda.src = "BackgroundEraser_20260812_140525808.png";
+                personaje.abajo = 3;
+            }
+
         }
-    }
 
             if (categoria === "cabello") {
 
