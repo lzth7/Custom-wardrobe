@@ -328,7 +328,18 @@
             prenda.src = "BackgroundEraser_20260812_140525808.png";
             personaje.cabello = 3;
         }
-     } 
+     }
+
+                if (opcion === 4) {
+
+        if (prenda.src.includes("BackgroundEraser_20260813_120926801.png")) {
+            prenda.src = "";
+            personaje.cabello = 0;
+        } else {
+            prenda.src = "BackgroundEraser_20260813_120926801.png";
+            personaje.cabello = 4;
+        }
+                }
             }            
 
             if (categoria === "zapatos") {
