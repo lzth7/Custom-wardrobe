@@ -239,6 +239,17 @@
             personaje.arriba = 3;
         }
     }
+
+       if (opcion === 4) {
+
+    if (prenda.src.includes("BackgroundEraser_20260813_114421793.png")) {
+        prenda.src = "";
+        personaje.arriba = 0;
+    } else {
+        prenda.src = "BackgroundEraser_20260813_114421793.png";
+        personaje.arriba = 4;
+    }
+        }
    }  
 
     if (categoria === "abajo") {
