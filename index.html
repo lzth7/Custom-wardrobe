@@ -166,7 +166,7 @@
                 <div class="botones">
                     <button onclick="cambiarOpcion('zapatos', 1)">Tenis blancos</button>
                     <button onclick="cambiarOpcion('zapatos', 2)">Botas negras</button>
-                    <button onclick="cambiarOpcion('zapatos', 3)">Botas</button>
+                    <button onclick="cambiarOpcion('zapatos', 3)">Zapatillas negras</button>
                 </div>
             </div>
 
@@ -344,11 +344,18 @@
     }
 
     if (opcion === 3) {
+        if (opcion === 3) {
+
+    if (prenda.src.includes("BackgroundEraser_20260813_111158935.png")) {
         prenda.src = "";
+        personaje.zapatos = 0;
+    } else {
+        prenda.src = "BackgroundEraser_20260813_111158935.png";
         personaje.zapatos = 3;
     }
-            }
-
+        }
+           }
+                
                 if (categoria === "accesorios") {
 
     const prenda = document.getElementById("prenda-accesorios");
