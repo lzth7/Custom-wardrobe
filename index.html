@@ -169,7 +169,7 @@
 
                <div class="botones">
                    <button onclick="cambiarOpcion('conjuntos', 1)">Vestido verde</button>
-                   <button onclick="cambiarOpcion('conjuntos', 1)">Vestido</button>
+                   <button onclick="cambiarOpcion('conjuntos', 2)">Vestido amarillo</button>
     </div>
             </div>
 
@@ -326,6 +326,19 @@
         } else {
             prenda.src = "BackgroundEraser_20260814_152332948.png";
             personaje.conjuntos = 1;
+        }
+    }
+
+                const prenda = document.getElementById("prenda-conjunto");
+
+    if (opcion === 2) {
+
+        if (prenda.src.includes("BackgroundEraser_20260815_172938776.png")) {
+            prenda.src = "";
+            personaje.conjuntos = 0;
+        } else {
+            prenda.src = "BackgroundEraser_20260815_172938776.png";
+            personaje.conjuntos = 2;
         }
     }
             }
