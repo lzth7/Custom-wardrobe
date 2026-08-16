@@ -328,12 +328,27 @@
             <div class="categoria">
                 <h2>👠 Zapatos</h2>
 
-                <div class="botones">
+                <div class="carrusel">
+
+        <button class="flecha" onclick="moverCarrusel('zapatos', -1)">
+            ❮
+        </button>
+
+        <div class="ventana-carrusel">
+
+            <div class="botones" id="botones-zapatos">
+
                     <button onclick="cambiarOpcion('zapatos', 1)">Tenis blancos</button>
                     <button onclick="cambiarOpcion('zapatos', 2)">Botas negras</button>
                     <button onclick="cambiarOpcion('zapatos', 3)">Zapatillas negras</button>
                 </div>
             </div>
+
+                    <button class="flecha" onclick="moverCarrusel('zapatos', 1)">
+                        ❯
+                   </button>
+
+                </div>
 
             <div class="categoria">
                 <h2>🎀 Accesorios</h2>
