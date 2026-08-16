@@ -213,23 +213,32 @@
 }
 
 .boton-flotante {
-    width: 60px;
-    height: 60px;
+    width: 52px;
+    height: 52px;
     padding: 0;
-    border-radius: 14px;
-    background: linear-gradient(135deg, #b52cff, #8c3fd1);
-    color: white;
-    font-size: 30px;
+    border-radius: 12px;
+    color: #392542;
+    font-size: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 5px 15px rgba(80, 50, 90, 0.25);
+    box-shadow: 0 5px 15px rgba(80, 50, 90, 0.18);
+    transition: transform 0.2s ease;
+}
+
+.boton-flotante.aleatorio-flotante {
+    background: #8c5aa8;
+    color: white;
+}
+
+.boton-flotante.ajustes-flotante {
+    background: #d8b6e8;
+    color: #392542;
 }
 
 .boton-flotante:hover {
     transform: scale(1.05);
-    background: linear-gradient(135deg, #c04cff, #9d4bdd);
-}
+        }
         
     </style>
 </head>
