@@ -278,13 +278,28 @@
             <div class="categoria">
                 <h2>👖 Parte inferior</h2>
 
-                <div class="botones">
+                <div class="carrusel">
+
+        <button class="flecha" onclick="moverCarrusel('abajo', -1)">
+            ❮
+        </button>
+
+        <div class="ventana-carrusel">
+
+            <div class="botones" id="botones-abajo">
+
                     <button onclick="cambiarOpcion('abajo', 1)">Pantalón cargo</button>
                     <button onclick="cambiarOpcion('abajo', 2)">Falda de mezclilla</button>
                     <button onclick="cambiarOpcion('abajo', 3)">Pants</button>
                     <button onclick="cambiarOpcion('abajo', 4)">Short blanco</button>
                 </div>
             </div>
+
+                    <button class="flecha" onclick="moverCarrusel('abajo', 1)">
+                       ❯
+                    </button>
+
+                </div>
 
             <div class="categoria">
               <h2>👗 Conjuntos</h2>
