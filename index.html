@@ -201,6 +201,35 @@
     justify-content: center;
     flex-shrink: 0;
     }
+
+.botones-flotantes {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.boton-flotante {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #b52cff, #8c3fd1);
+    color: white;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(80, 50, 90, 0.25);
+}
+
+.boton-flotante:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #c04cff, #9d4bdd);
+}
         
     </style>
 </head>
@@ -430,7 +459,19 @@
 
         </section>
 
-    </main>
+          <div class="botones-flotantes">
+
+    <button class="boton-flotante" onclick="aleatorio()" title="Outfit aleatorio">
+        🎲
+    </button>
+
+    <button class="boton-flotante" onclick="abrirAjustes()" title="Ajustes">
+        ⚙️
+    </button>
+
+          </div>      
+
+     </main>
 
     <script>
 
