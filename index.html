@@ -165,6 +165,40 @@
     color: white;
     font-weight: bold;
 }
+
+.carrusel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.ventana-carrusel {
+    overflow: hidden;
+    flex: 1;
+}
+
+.ventana-carrusel .botones {
+    flex-wrap: nowrap;
+    transition: transform 0.3s ease;
+}
+
+.ventana-carrusel .botones button {
+    flex: 0 0 auto;
+}
+
+.flecha {
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    font-size: 30px;
+    border-radius: 50%;
+    background: #c99ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    }
         
     </style>
 </head>
@@ -889,6 +923,44 @@ function mostrarMenuCapas() {
             }
 
         actualizarCapas();
+
+        let posicionesCarrusel = {};
+
+function moverCarrusel(categoria, direccion) {
+
+    const botones = document.getElementById("botones-" + categoria);
+
+    if (!botones) return;
+
+    if (!posicionesCarrusel[categoria]) {
+        posicionesCarrusel[categoria] = 0;
+    }
+
+    const cantidadBotones = botones.children.length;
+
+    const botonesVisibles = 3;
+
+    const maximo = Math.max(0, cantidadBotones - botonesVisibles);
+
+    posicionesCarrusel[categoria] += direccion;
+
+    if (posicionesCarrusel[categoria] < 0) {
+        posicionesCarrusel[categoria] = 0;
+    }
+
+    if (posicionesCarrusel[categoria] > maximo) {
+        posicionesCarrusel[categoria] = maximo;
+    }
+
+    const anchoBoton = botones.children[0].offsetWidth;
+    const espacio = 10;
+
+    const desplazamiento =
+        posicionesCarrusel[categoria] * (anchoBoton + espacio);
+
+    botones.style.transform =
+        `translateX(-${desplazamiento}px)`;
+        }
         
     </script>
 
