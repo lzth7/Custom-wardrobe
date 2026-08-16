@@ -110,6 +110,62 @@
             color: white;
             font-weight: bold;
         }
+
+.capas-boton {
+    width: 100%;
+    margin-top: 10px;
+    background: #d8b6e8;
+    color: #392542;
+    font-weight: bold;
+}
+
+.menu-capas {
+    display: none;
+    margin-top: 15px;
+    padding: 20px;
+    background: #f3e7f7;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.menu-capas h3 {
+    margin-top: 0;
+    color: #70458c;
+}
+
+.menu-capas p {
+    color: #392542;
+}
+
+.menu-capas select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    color: #392542;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.controles-capas {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.controles-capas button {
+    flex: 1;
+}
+
+.cerrar-capas {
+    width: 100%;
+    margin-top: 15px;
+    background: #8c5aa8;
+    color: white;
+    font-weight: bold;
+}
+        
     </style>
 </head>
 
@@ -196,6 +252,55 @@
             <button class="aleatorio" onclick="aleatorio()">
                 🎲 Outfit aleatorio
             </button>
+
+            <button class="capas-boton" onclick="mostrarMenuCapas()">
+    ⚙️ Ajustar capas
+</button>
+
+<div id="menu-capas" class="menu-capas">
+
+    <h3>✦ Orden de prendas ✦</h3>
+
+    <p>Selecciona una prenda:</p>
+
+    <select id="prenda-seleccionada">
+        <option value="arriba">👚 Parte superior</option>
+        <option value="abajo">👖 Parte inferior</option>
+        <option value="conjuntos">👗 Vestido / conjunto</option>
+        <option value="zapatos">👠 Zapatos</option>
+        <option value="cabello">💇‍♀️ Cabello</option>
+        <option value="accesorios">🎀 Accesorios</option>
+    </select>
+
+    <div class="controles-capas">
+
+        <button onclick="subirCapa()">
+            ⬆️ Subir
+        </button>
+
+        <button onclick="bajarCapa()">
+            ⬇️ Bajar
+        </button>
+
+    </div>
+
+    <div class="controles-capas">
+
+        <button onclick="frenteCapa()">
+            ⬆️⬆️ Al frente
+        </button>
+
+        <button onclick="fondoCapa()">
+            ⬇️⬇️ Al fondo
+        </button>
+
+    </div>
+
+    <button class="cerrar-capas" onclick="mostrarMenuCapas()">
+        ✓ Listo
+    </button>
+
+</div>
 
         </section>
 
