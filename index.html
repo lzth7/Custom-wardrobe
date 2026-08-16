@@ -250,13 +250,28 @@
             <div class="categoria">
                 <h2>👚 Parte superior</h2>
 
-                <div class="botones">
+                <div class="carrusel">
+
+        <button class="flecha" onclick="moverCarrusel('arriba', -1)">
+            ❮
+        </button>
+
+        <div class="ventana-carrusel">
+
+            <div class="botones" id="botones-arriba">
+
                     <button onclick="cambiarOpcion('arriba', 1)">Lunares</button>
                     <button onclick="cambiarOpcion('arriba', 2)">Hombrera negra</button>
                     <button onclick="cambiarOpcion('arriba', 3)">Hombrera gris</button>
                     <button onclick="cambiarOpcion('arriba', 4)">Top negro</button>
                 </div>
             </div>
+
+                    <button class="flecha" onclick="moverCarrusel('arriba', 1)">
+                        ❯
+                    </button>
+
+                </div>
 
             <div class="categoria">
                 <h2>👖 Parte inferior</h2>
