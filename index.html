@@ -304,11 +304,26 @@
             <div class="categoria">
               <h2>👗 Conjuntos</h2>
 
-               <div class="botones">
+                <div class="carrusel">
+
+        <button class="flecha" onclick="moverCarrusel('conjuntos', -1)">
+            ❮
+        </button>
+
+        <div class="ventana-carrusel">
+
+            <div class="botones" id="botones-conjuntos">
+
                    <button onclick="cambiarOpcion('conjuntos', 1)">Vestido verde</button>
                    <button onclick="cambiarOpcion('conjuntos', 2)">Vestido amarillo</button>
     </div>
             </div>
+
+                 <button class="flecha" onclick="moverCarrusel('conjuntos', 1)">
+                    ❯
+               </button>
+
+                </div>   
 
             <div class="categoria">
                 <h2>👠 Zapatos</h2>
