@@ -611,19 +611,42 @@
         
         function aleatorio() {
 
-            personaje.cabello = Math.floor(Math.random() * 4) + 1;
-            personaje.arriba = Math.floor(Math.random() * 4) + 1;
-            personaje.abajo = Math.floor(Math.random() * 4) + 1;
-            personaje.zapatos = Math.floor(Math.random() * 3) + 1;
-            personaje.accesorios = Math.floor(Math.random() * 3) + 1;
+    personaje.cabello = Math.floor(Math.random() * 4) + 1;
+    personaje.zapatos = Math.floor(Math.random() * 3) + 1;
+    personaje.accesorios = Math.floor(Math.random() * 3) + 1;
 
-            mostrarOpcion("cabello", personaje.cabello);
-            mostrarOpcion("arriba", personaje.arriba);
-            mostrarOpcion("abajo", personaje.abajo);
-            mostrarOpcion("zapatos", personaje.zapatos);
-            mostrarOpcion("accesorios", personaje.accesorios);
+    const usarConjunto = Math.floor(Math.random() * 2);
 
-            console.log(personaje);
+    if (usarConjunto === 1) {
+
+        personaje.conjuntos = Math.floor(Math.random() * 2) + 1;
+        personaje.arriba = 0;
+        personaje.abajo = 0;
+
+    } else {
+
+        personaje.conjuntos = 0;
+        personaje.arriba = Math.floor(Math.random() * 4) + 1;
+        personaje.abajo = Math.floor(Math.random() * 4) + 1;
+
+    }
+
+    mostrarOpcion("cabello", personaje.cabello);
+    mostrarOpcion("zapatos", personaje.zapatos);
+    mostrarOpcion("accesorios", personaje.accesorios);
+
+    if (personaje.conjuntos > 0) {
+
+        mostrarOpcion("conjuntos", personaje.conjuntos);
+
+    } else {
+
+        mostrarOpcion("arriba", personaje.arriba);
+        mostrarOpcion("abajo", personaje.abajo);
+
+    }
+
+    console.log(personaje);
         }
 
     </script>
