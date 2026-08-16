@@ -357,6 +357,7 @@
 
                    <button onclick="cambiarOpcion('conjuntos', 1)">Vestido verde</button>
                    <button onclick="cambiarOpcion('conjuntos', 2)">Vestido amarillo</button>
+                   <button onclick="cambiarOpcion('conjuntos', 3)">Bikini amarillo</button>
     </div>
             </div>
 
@@ -661,6 +662,22 @@
             personaje.abajo = 0;
         }
     }
+
+     if (opcion === 3) {
+
+        if (prenda.src.includes("BackgroundEraser_20260816_132102010.png")) {
+            prenda.src = "";
+            personaje.conjuntos = 0;
+        } else {
+            prenda.src = "BackgroundEraser_20260816_132102010.png";
+            personaje.conjuntos = 3;
+
+            arriba.src = "";
+            abajo.src = "";
+            personaje.arriba = 0;
+            personaje.abajo = 0;
+        }
+        }
             }
 
             if (categoria === "cabello") {
@@ -875,6 +892,10 @@ if (categoria === "conjuntos") {
     if (opcion === 2) {
         prenda.src = "BackgroundEraser_20260815_172938776.png";
     }
+
+    if (opcion === 3) {
+        prenda.src = "BackgroundEraser_20260816_132102010.png";
+    }
         }
             
     if (categoria === "zapatos") {
@@ -919,7 +940,7 @@ if (categoria === "conjuntos") {
     personaje.zapatos = Math.floor(Math.random() * 3) + 1;
     personaje.accesorios = Math.floor(Math.random() * 3) + 1;
 
-    const usarConjunto = Math.floor(Math.random() * 2);
+    const usarConjunto = Math.floor(Math.random() * 3);
 
     if (usarConjunto === 1) {
 
