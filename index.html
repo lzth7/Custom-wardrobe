@@ -646,6 +646,9 @@ if (categoria === "conjuntos") {
     } else {
 
         personaje.conjuntos = 0;
+
+        document.getElementById("prenda-conjunto").src = "";
+        
         personaje.arriba = Math.floor(Math.random() * 4) + 1;
         personaje.abajo = Math.floor(Math.random() * 4) + 1;
 
