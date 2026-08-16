@@ -230,6 +230,14 @@
                     <button onclick="cambiarOpcion('cabello', 3)">Ondas con fleco</button>
                     <button onclick="cambiarOpcion('cabello', 4)">Lacio</button>
                 </div>
+
+                    <button class="flecha" onclick="desplazarCategoria('cabello', 1)">    
+            ❯
+                    <button class="flecha" onclick="desplazarCategoria('cabello', -1)">
+            ❮
+                        </button>
+                    
+                </div>
             </div>
 
             <div class="categoria">
@@ -960,6 +968,15 @@ function moverCarrusel(categoria, direccion) {
 
     botones.style.transform =
         `translateX(-${desplazamiento}px)`;
+        }
+
+        function desplazarCategoria(id, direccion) {
+    const contenedor = document.getElementById(id);
+
+    contenedor.scrollBy({
+        left: direccion * 300,
+        behavior: "smooth"
+    });
         }
         
     </script>
