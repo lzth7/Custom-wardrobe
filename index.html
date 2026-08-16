@@ -777,6 +777,117 @@ if (categoria === "conjuntos") {
     console.log(personaje);
         }
 
+let ordenCapas = [
+    "abajo",
+    "arriba",
+    "zapatos",
+    "cabello",
+    "accesorios",
+    "conjuntos"
+];
+
+function obtenerElementoCapa(categoria) {
+
+    const ids = {
+        arriba: "prenda-arriba",
+        abajo: "prenda-abajo",
+        conjuntos: "prenda-conjunto",
+        zapatos: "prenda-zapatos",
+        cabello: "prenda-cabello",
+        accesorios: "prenda-accesorios"
+    };
+
+    return document.getElementById(ids[categoria]);
+}
+
+
+function actualizarCapas() {
+
+    ordenCapas.forEach((categoria, indice) => {
+
+        const elemento = obtenerElementoCapa(categoria);
+
+        if (elemento) {
+            elemento.style.zIndex = indice + 1;
+        }
+
+    });
+}
+
+
+function obtenerCategoriaSeleccionada() {
+
+    return document.getElementById("prenda-seleccionada").value;
+
+}
+
+
+function subirCapa() {
+
+    const categoria = obtenerCategoriaSeleccionada();
+    const posicion = ordenCapas.indexOf(categoria);
+
+    if (posicion < ordenCapas.length - 1) {
+
+        [ordenCapas[posicion], ordenCapas[posicion + 1]] =
+        [ordenCapas[posicion + 1], ordenCapas[posicion]];
+
+        actualizarCapas();
+    }
+}
+
+
+function bajarCapa() {
+
+    const categoria = obtenerCategoriaSeleccionada();
+    const posicion = ordenCapas.indexOf(categoria);
+
+    if (posicion > 0) {
+
+        [ordenCapas[posicion], ordenCapas[posicion - 1]] =
+        [ordenCapas[posicion - 1], ordenCapas[posicion]];
+
+        actualizarCapas();
+    }
+}
+
+
+function frenteCapa() {
+
+    const categoria = obtenerCategoriaSeleccionada();
+    const posicion = ordenCapas.indexOf(categoria);
+
+    ordenCapas.splice(posicion, 1);
+    ordenCapas.push(categoria);
+
+    actualizarCapas();
+}
+
+
+function fondoCapa() {
+
+    const categoria = obtenerCategoriaSeleccionada();
+    const posicion = ordenCapas.indexOf(categoria);
+
+    ordenCapas.splice(posicion, 1);
+    ordenCapas.unshift(categoria);
+
+    actualizarCapas();
+}
+
+
+function mostrarMenuCapas() {
+
+    const menu = document.getElementById("menu-capas");
+
+    if (menu.style.display === "block") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "block";
+    }
+
+            }
+        
     </script>
 
 </body>
