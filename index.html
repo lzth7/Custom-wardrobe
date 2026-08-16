@@ -222,24 +222,31 @@
         <section class="controles">
 
             <div class="categoria">
-                <h2>💇‍♀️ Cabello</h2>
+    <h2>💇‍♀️ Cabello</h2>
 
-                <div class="botones">
-                    <button onclick="cambiarOpcion('cabello', 1)">Ondas de sirena</button>
-                    <button onclick="cambiarOpcion('cabello', 2)">Lacio con broche</button>
-                    <button onclick="cambiarOpcion('cabello', 3)">Ondas con fleco</button>
-                    <button onclick="cambiarOpcion('cabello', 4)">Lacio</button>
-                </div>
+    <div class="carrusel">
 
-                    <button class="flecha" onclick="desplazarCategoria('cabello', 1)">    
-            ❯
-                    <button class="flecha" onclick="desplazarCategoria('cabello', -1)">
+        <button class="flecha" onclick="moverCarrusel('cabello', -1)">
             ❮
-                        </button>
-                    
-                </div>
-            </div>
+        </button>
 
+        <div class="ventana-carrusel">
+
+            <div class="botones" id="botones-cabello">
+
+                <button onclick="cambiarOpcion('cabello', 1)">Ondas de sirena</button>
+                <button onclick="cambiarOpcion('cabello', 2)">Lacio con broche</button>
+                <button onclick="cambiarOpcion('cabello', 3)">Ondas con fleco</button>
+                <button onclick="cambiarOpcion('cabello', 4)">Lacio</button>
+            </div>
+        </div>
+
+        <button class="flecha" onclick="moverCarrusel('cabello', 1)">
+            ❯
+        </button>
+
+    </div>
+            </div>
             <div class="categoria">
                 <h2>👚 Parte superior</h2>
 
