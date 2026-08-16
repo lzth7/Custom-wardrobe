@@ -572,7 +572,27 @@
         }
     }
 
+if (categoria === "conjuntos") {
 
+    const prenda = document.getElementById("prenda-conjunto");
+    const arriba = document.getElementById("prenda-arriba");
+    const abajo = document.getElementById("prenda-abajo");
+
+    arriba.src = "";
+    abajo.src = "";
+
+    personaje.arriba = 0;
+    personaje.abajo = 0;
+
+    if (opcion === 1) {
+        prenda.src = "BackgroundEraser_20260814_152332948.png";
+    }
+
+    if (opcion === 2) {
+        prenda.src = "BackgroundEraser_20260815_172938776.png";
+    }
+        }
+            
     if (categoria === "zapatos") {
 
         const prenda = document.getElementById("prenda-zapatos");
