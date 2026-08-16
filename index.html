@@ -353,12 +353,27 @@
             <div class="categoria">
                 <h2>🎀 Accesorios</h2>
 
-                <div class="botones">
+                <div class="carrusel">
+
+        <button class="flecha" onclick="moverCarrusel('accesorios', -1)">
+            ❮
+        </button>
+
+        <div class="ventana-carrusel">
+
+            <div class="botones" id="botones-accesorios">
+
                     <button onclick="cambiarOpcion('accesorios', 1)">Bolso negro</button>
                     <button onclick="cambiarOpcion('accesorios', 2)">Flor blanca</button>
                     <button onclick="cambiarOpcion('accesorios', 3)">Collar</button>
                 </div>
             </div>
+
+              <button class="flecha" onclick="moverCarrusel('accesorios', 1)">
+                 ❯
+              </button>
+
+                </div>      
 
             <button class="aleatorio" onclick="aleatorio()">
                 🎲 Outfit aleatorio
