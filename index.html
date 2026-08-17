@@ -312,6 +312,7 @@
                     <button onclick="cambiarOpcion('arriba', 2)">Hombrera negra</button>
                     <button onclick="cambiarOpcion('arriba', 3)">Hombrera gris</button>
                     <button onclick="cambiarOpcion('arriba', 4)">Top negro</button>
+                    <button onclick="cambiarOpcion('arriba', 5)">Pijama gris</button>
                 </div>
             </div>
 
@@ -556,6 +557,20 @@
     } else {
         prenda.src = "BackgroundEraser_20260813_114421793.png";
         personaje.arriba = 4;
+
+        conjunto.src = "";
+        personaje.conjuntos = 0;
+    }
+        }
+
+        if (opcion === 5) {
+
+    if (prenda.src.includes("BackgroundEraser_20260817_170708951.png")) {
+        prenda.src = "";
+        personaje.arriba = 0;
+    } else {
+        prenda.src = "BackgroundEraser_20260817_170708951.png";
+        personaje.arriba = 5;
 
         conjunto.src = "";
         personaje.conjuntos = 0;
@@ -886,6 +901,10 @@
         if (opcion === 4) {
             prenda.src = "BackgroundEraser_20260813_114421793.png";
         }
+
+        if (opcion === 5) {
+            prenda.src = "BackgroundEraser_20260817_170708951.png";
+        }    
     }
 
 
@@ -1003,7 +1022,7 @@ if (categoria === "conjuntos") {
 
         document.getElementById("prenda-conjunto").src = "";
         
-        personaje.arriba = Math.floor(Math.random() * 4) + 1;
+        personaje.arriba = Math.floor(Math.random() * 5) + 1;
         personaje.abajo = Math.floor(Math.random() * 4) + 1;
 
     }
