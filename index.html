@@ -479,7 +479,7 @@
         🎲
     </button>
 
-    <button class="boton-flotante" onclick="abrirAjustes()" title="Ajustes">
+    <button class="boton-flotante" onclick="mostrarMenuCapas()" title="Ajustes">
         ⚙️
     </button>
 
@@ -947,18 +947,6 @@ if (categoria === "conjuntos") {
             prenda.src = "BackgroundEraser_20260813_111644759.png";
         }
     }
-        }
-
-        function abrirAjustes() {
-
-    const menu = document.querySelector(".menu-capas");
-
-    if (menu.style.display === "block") {
-        menu.style.display = "none";
-    } else {
-        menu.style.display = "block";
-    }
-
         }
         
         function aleatorio() {
