@@ -372,6 +372,7 @@
                     <button onclick="cambiarOpcion('abajo', 2)">Falda de mezclilla</button>
                     <button onclick="cambiarOpcion('abajo', 3)">Pants</button>
                     <button onclick="cambiarOpcion('abajo', 4)">Short blanco</button>
+                    <button onclick="cambiarOpcion('abajo', 5)">Falda negra</button>
                 </div>
             </div>
 
@@ -757,6 +758,22 @@
             personaje.abajo = 0;
         }
       }      
+
+                if (opcion === 5) {
+
+        if (prenda.src.includes("BackgroundEraser_20260818_144318222.png")) {
+            prenda.src = "";
+            personaje.conjuntos = 0;
+        } else {
+            prenda.src = "BackgroundEraser_20260818_144318222.png";
+            personaje.conjuntos = 5;
+
+            arriba.src = "";
+            abajo.src = "";
+            personaje.arriba = 0;
+            personaje.abajo = 0;
+        }
+      }      
             }
 
             if (categoria === "cabello") {
@@ -990,6 +1007,10 @@
         if (opcion === 4) {
             prenda.src = "BackgroundEraser_20260813_145829728.png";
         }
+
+        if (opcion === 5) {
+            prenda.src = "BackgroundEraser_20260818_144318222.png";
+        }    
     }
 
 if (categoria === "conjuntos") {
@@ -1097,6 +1118,7 @@ function buscarPrenda() {
         { nombre: "Falda de mezclilla", categoria: "abajo", opcion: 2 },
         { nombre: "Pants", categoria: "abajo", opcion: 3 },
         { nombre: "Short blanco", categoria: "abajo", opcion: 4 },
+        { nombre: "Falda negra", categoria: "abajo", opcion: 5 },
 
         { nombre: "Vestido verde", categoria: "conjuntos", opcion: 1 },
         { nombre: "Vestido amarillo", categoria: "conjuntos", opcion: 2 },
@@ -1166,7 +1188,7 @@ function buscarPrenda() {
         document.getElementById("prenda-conjunto").src = "";
         
         personaje.arriba = Math.floor(Math.random() * 5) + 1;
-        personaje.abajo = Math.floor(Math.random() * 4) + 1;
+        personaje.abajo = Math.floor(Math.random() * 5) + 1;
 
     }
 
