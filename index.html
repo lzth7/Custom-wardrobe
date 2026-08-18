@@ -247,6 +247,38 @@
 .boton-flotante:hover {
     transform: scale(1.05);
         }
+
+.buscador-ajustes {
+    margin-bottom: 25px;
+}
+
+.buscador-ajustes h3 {
+    margin-top: 0;
+    color: #70458c;
+}
+
+#buscador-prendas {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: white;
+    color: #392542;
+    font-size: 14px;
+    outline: none;
+}
+
+#resultados-busqueda {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.resultado-prenda {
+    width: 100%;
+    text-align: left;
+}
         
     </style>
 </head>
@@ -427,6 +459,21 @@
                 </div>      
 
 <div id="menu-capas" class="menu-capas">
+
+    <div class="buscador-ajustes">
+
+    <h3>🔎 Buscar prenda</h3>
+
+    <input
+        type="text"
+        id="buscador-prendas"
+        placeholder="Busca una prenda..."
+        oninput="buscarPrenda()"
+    >
+
+    <div id="resultados-busqueda"></div>
+
+    </div>
 
     <h3>✦ Orden de prendas ✦</h3>
 
