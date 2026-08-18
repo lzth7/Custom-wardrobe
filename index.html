@@ -1048,6 +1048,85 @@ if (categoria === "conjuntos") {
         }    
     }
         }
+
+function buscarPrenda() {
+
+    const texto = document.getElementById("buscador-prendas").value
+        .toLowerCase()
+        .trim();
+
+    const resultados = document.getElementById("resultados-busqueda");
+
+    resultados.innerHTML = "";
+
+    if (texto === "") {
+        return;
+    }
+
+    const prendas = [
+
+        { nombre: "Ondas de sirena", categoria: "cabello", opcion: 1 },
+        { nombre: "Lacio con broche", categoria: "cabello", opcion: 2 },
+        { nombre: "Ondas con fleco", categoria: "cabello", opcion: 3 },
+        { nombre: "Lacio", categoria: "cabello", opcion: 4 },
+
+        { nombre: "Lunares", categoria: "arriba", opcion: 1 },
+        { nombre: "Hombrera negra", categoria: "arriba", opcion: 2 },
+        { nombre: "Hombrera gris", categoria: "arriba", opcion: 3 },
+        { nombre: "Top negro", categoria: "arriba", opcion: 4 },
+        { nombre: "Pijama gris", categoria: "arriba", opcion: 5 },
+
+        { nombre: "Pantalón cargo", categoria: "abajo", opcion: 1 },
+        { nombre: "Falda de mezclilla", categoria: "abajo", opcion: 2 },
+        { nombre: "Pants", categoria: "abajo", opcion: 3 },
+        { nombre: "Short blanco", categoria: "abajo", opcion: 4 },
+
+        { nombre: "Vestido verde", categoria: "conjuntos", opcion: 1 },
+        { nombre: "Vestido amarillo", categoria: "conjuntos", opcion: 2 },
+        { nombre: "Bikini amarillo", categoria: "conjuntos", opcion: 3 },
+        { nombre: "Corset blanco", categoria: "conjuntos", opcion: 4 },
+
+        { nombre: "Tenis blancos", categoria: "zapatos", opcion: 1 },
+        { nombre: "Botas negras", categoria: "zapatos", opcion: 2 },
+        { nombre: "Zapatillas negras", categoria: "zapatos", opcion: 3 },
+        { nombre: "Converse", categoria: "zapatos", opcion: 4 },
+        
+        { nombre: "Bolso negro", categoria: "accesorios", opcion: 1 },
+        { nombre: "Flor blanca", categoria: "accesorios", opcion: 2 },
+        { nombre: "Collar", categoria: "accesorios", opcion: 3 },
+        { nombre: "Lentes negros", categoria: "accesorios", opcion: 4 },
+
+    ];
+
+    const encontrados = prendas.filter(prenda =>
+        prenda.nombre.toLowerCase().includes(texto)
+    );
+
+    encontrados.forEach(prenda => {
+
+        const boton = document.createElement("button");
+
+        boton.className = "resultado-prenda";
+        boton.textContent = prenda.nombre;
+
+        boton.onclick = function() {
+
+            cambiarOpcion(prenda.categoria, prenda.opcion);
+
+        };
+
+        resultados.appendChild(boton);
+
+    });
+
+    if (encontrados.length === 0) {
+
+        resultados.innerHTML =
+            "<p>No se encontró ninguna prenda 🥲</p>";
+
+    }
+
+        }
         
         function aleatorio() {
 
