@@ -1203,6 +1203,87 @@ function buscarPrenda() {
 
     }
 
+    let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+
+    function alternarFavorito(categoria, opcion, nombre) {
+
+    const indice = favoritos.findIndex(
+        favorito =>
+            favorito.categoria === categoria &&
+            favorito.opcion === opcion
+    );
+
+    if (indice === -1) {
+
+        favoritos.push({
+            categoria: categoria,
+            opcion: opcion,
+            nombre: nombre
+        });
+
+    } else {
+
+        favoritos.splice(indice, 1);
+
+    }
+
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
+
+    mostrarFavoritos();
+        }
+
+    function mostrarFavoritos() {
+
+    const lista = document.getElementById("lista-favoritos");
+
+    lista.innerHTML = "";
+
+    if (favoritos.length === 0) {
+
+        lista.innerHTML =
+            "<p>No tienes prendas favoritas todavía.</p>";
+
+        return;
+    }
+
+    favoritos.forEach(favorito => {
+
+        const contenedor = document.createElement("div");
+
+        contenedor.className = "favorito-prenda";
+
+        const boton = document.createElement("button");
+
+        boton.className = "nombre-favorito";
+        boton.textContent = favorito.nombre;
+
+        boton.onclick = function() {
+            cambiarOpcion(
+                favorito.categoria,
+                favorito.opcion
+            );
+        };
+
+        const estrella = document.createElement("button");
+
+        estrella.className = "boton-favorito";
+        estrella.textContent = "⭐";
+
+        estrella.onclick = function() {
+            alternarFavorito(
+                favorito.categoria,
+                favorito.opcion,
+                favorito.nombre
+            );
+        };
+
+        contenedor.appendChild(boton);
+        contenedor.appendChild(estrella);
+
+        lista.appendChild(contenedor);
+
+    });
+    }
         }
         
         function aleatorio() {
@@ -1357,6 +1438,7 @@ function mostrarMenuCapas() {
         menu.style.display = "block";
     }
 
+    mostrarFavoritos();
             }
 
         actualizarCapas();
