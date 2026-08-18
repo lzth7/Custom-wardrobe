@@ -687,6 +687,19 @@
             personaje.conjuntos = 0;
         }
         }
+
+        if (opcion === 5) {
+        if (prenda.src.includes("BackgroundEraser_20260818_144318222.png")) {
+            prenda.src = "";
+            personaje.abajo = 0;
+        } else {
+            prenda.src = "BackgroundEraser_20260818_144318222.png";
+            personaje.abajo = 5;
+
+            conjunto.src = "";
+            personaje.conjuntos = 0;
+        }
+        }
     }
             
             if (categoria === "conjuntos") {
@@ -751,22 +764,6 @@
         } else {
             prenda.src = "BackgroundEraser_20260816_213548153.png";
             personaje.conjuntos = 4;
-
-            arriba.src = "";
-            abajo.src = "";
-            personaje.arriba = 0;
-            personaje.abajo = 0;
-        }
-      }      
-
-                if (opcion === 5) {
-
-        if (prenda.src.includes("BackgroundEraser_20260818_144318222.png")) {
-            prenda.src = "";
-            personaje.conjuntos = 0;
-        } else {
-            prenda.src = "BackgroundEraser_20260818_144318222.png";
-            personaje.conjuntos = 5;
 
             arriba.src = "";
             abajo.src = "";
