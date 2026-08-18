@@ -457,6 +457,7 @@
                     <button onclick="cambiarOpcion('zapatos', 2)">Botas negras</button>
                     <button onclick="cambiarOpcion('zapatos', 3)">Zapatillas negras</button>
                     <button onclick="cambiarOpcion('zapatos', 4)">Converse</button>
+                    <button onclick="cambiarOpcion('zapatos', 5)">Tacones con moño</button>
                 </div>
             </div>
 
@@ -935,6 +936,16 @@
         personaje.zapatos = 4;
     }
         }
+
+                if (opcion === 5) {
+       if (prenda.src.includes("BackgroundEraser_20260818_163711516.png")) {
+        prenda.src = "";
+        personaje.zapatos = 0;
+    } else {
+        prenda.src = "BackgroundEraser_20260818_163711516.png";
+        personaje.zapatos = 5;
+    }
+        }
            }
                 
                 if (categoria === "accesorios") {
@@ -1120,6 +1131,10 @@ if (categoria === "conjuntos") {
         if (opcion === 4) {
             prenda.src = "BackgroundEraser_20260816_201751292.png";
         }   
+
+        if (opcion === 5) {
+            prenda.src = "BackgroundEraser_20260818_163711516.png";
+        }    
     }
 
 
@@ -1189,6 +1204,7 @@ function buscarPrenda() {
         { nombre: "Botas negras", categoria: "zapatos", opcion: 2 },
         { nombre: "Zapatillas negras", categoria: "zapatos", opcion: 3 },
         { nombre: "Converse", categoria: "zapatos", opcion: 4 },
+        { nombre: "Tacones con moño", categoria: "zapatos", opcion: 5 },
         
         { nombre: "Bolso negro", categoria: "accesorios", opcion: 1 },
         { nombre: "Flor blanca", categoria: "accesorios", opcion: 2 },
@@ -1311,7 +1327,7 @@ function buscarPrenda() {
         function aleatorio() {
 
     personaje.cabello = Math.floor(Math.random() * 5) + 1;
-    personaje.zapatos = Math.floor(Math.random() * 4) + 1;
+    personaje.zapatos = Math.floor(Math.random() * 5) + 1;
     personaje.accesorios = Math.floor(Math.random() * 4) + 1;
 
     const usarConjunto = Math.floor(Math.random() * 2);
