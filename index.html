@@ -310,6 +310,23 @@
     width: 42px;
     padding: 8px;
 }
+
+.resultado-prenda {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.resultado-prenda .nombre-favorito {
+    flex: 1;
+    text-align: left;
+}
+
+.resultado-prenda .boton-favorito {
+    width: 45px;
+    flex-shrink: 0;
+}        
         
     </style>
 </head>
@@ -1236,20 +1253,57 @@ function buscarPrenda() {
 
     encontrados.forEach(prenda => {
 
-        const boton = document.createElement("button");
+    const contenedor = document.createElement("div");
 
-        boton.className = "resultado-prenda";
-        boton.textContent = prenda.nombre;
+    contenedor.className = "resultado-prenda";
 
-        boton.onclick = function() {
+    const boton = document.createElement("button");
 
-            cambiarOpcion(prenda.categoria, prenda.opcion);
+    boton.className = "nombre-favorito";
+    boton.textContent = prenda.nombre;
 
-        };
+    boton.onclick = function() {
 
-        resultados.appendChild(boton);
+        cambiarOpcion(
+            prenda.categoria,
+            prenda.opcion
+        );
 
-    });
+    };
+
+
+    const estrella = document.createElement("button");
+
+    estrella.className = "boton-favorito";
+
+    const esFavorito = favoritos.some(
+        favorito =>
+            favorito.categoria === prenda.categoria &&
+            favorito.opcion === prenda.opcion
+    );
+
+    estrella.textContent = esFavorito ? "⭐" : "☆";
+
+
+    estrella.onclick = function() {
+
+        alternarFavorito(
+            prenda.categoria,
+            prenda.opcion,
+            prenda.nombre
+        );
+
+        buscarPrenda();
+
+    };
+
+
+    contenedor.appendChild(boton);
+    contenedor.appendChild(estrella);
+
+    resultados.appendChild(contenedor);
+
+});
 
     if (encontrados.length === 0) {
 
