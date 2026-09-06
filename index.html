@@ -327,6 +327,26 @@
     width: 45px;
     flex-shrink: 0;
 }        
+
+.boton-seccion {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.opciones-fondos {
+    display: none;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.opciones-fondos.mostrar {
+    display: flex;
+}
+
+.opciones-fondos button {
+    flex: 1 1 45%;
+}
         
     </style>
 </head>
@@ -538,6 +558,34 @@
     </div>
 
 </div>
+
+    <div class="seccion-fondos">
+
+    <button class="boton-seccion" onclick="mostrarFondos()">
+        🎨 Fondos
+    </button>
+
+    <div id="opciones-fondos" class="opciones-fondos">
+
+        <button onclick="cambiarFondo('clasico')">
+            💜 Clásico
+        </button>
+
+        <button onclick="cambiarFondo('closet')">
+            👗 Clóset
+        </button>
+
+        <button onclick="cambiarFondo('pasarela')">
+            ✨ Pasarela
+        </button>
+
+        <button onclick="cambiarFondo('playa')">
+            🏖️ Playa
+        </button>
+
+    </div>
+
+    </div>
     
     <h3>✦ Orden de prendas ✦</h3>
 
@@ -1617,6 +1665,44 @@ function moverCarrusel(categoria, direccion) {
         left: direccion * 300,
         behavior: "smooth"
     });
+        }
+
+function mostrarFondos() {
+    const opciones = document.getElementById("opciones-fondos");
+
+    if (opciones.classList.contains("mostrar")) {
+        opciones.classList.remove("mostrar");
+    } else {
+        opciones.classList.add("mostrar");
+    }
+}
+
+function cambiarFondo(fondo) {
+    const zona = document.querySelector(".zona-personaje");
+
+    if (fondo === "clasico") {
+        zona.style.backgroundImage = "none";
+        zona.style.backgroundColor = "#d9c3df";
+    }
+
+    if (fondo === "closet") {
+        zona.style.backgroundImage =
+            "url('Gemini_Generated_Image_3veojs3veojs3veo.jpeg')";
+    }
+
+    if (fondo === "pasarela") {
+        zona.style.backgroundImage =
+            "url('Gemini_Generated_Image_o2cj6go2cj6go2cj.jpeg')";
+    }
+
+    if (fondo === "playa") {
+        zona.style.backgroundImage =
+            "url('Gemini_Generated_Image_3evfu43evfu43evf.jpeg')";
+    }
+
+    zona.style.backgroundSize = "cover";
+    zona.style.backgroundPosition = "center";
+    zona.style.backgroundRepeat = "no-repeat";
         }
         
     </script>
