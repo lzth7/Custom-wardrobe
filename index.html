@@ -497,6 +497,7 @@ button:active {
                     <button onclick="cambiarOpcion('abajo', 3)">Pants</button>
                     <button onclick="cambiarOpcion('abajo', 4)">Short blanco</button>
                     <button onclick="cambiarOpcion('abajo', 5)">Falda negra</button>
+                    <button onclick="cambiarOpcion('abajo', 6)">Pijama gris</button>
                 </div>
             </div>
 
@@ -930,6 +931,19 @@ button:active {
             personaje.conjuntos = 0;
         }
         }
+
+        if (opcion === 6) {
+        if (prenda.src.includes("BackgroundEraser_20260907_002354824.png")) {
+            prenda.src = "";
+            personaje.abajo = 0;
+        } else {
+            prenda.src = "BackgroundEraser_20260907_002354824.png";
+            personaje.abajo = 6;
+
+            conjunto.src = "";
+            personaje.conjuntos = 0;
+        }
+        }
     }
             
             if (categoria === "conjuntos") {
@@ -1279,6 +1293,10 @@ button:active {
         if (opcion === 5) {
             prenda.src = "BackgroundEraser_20260818_144318222.png";
         }    
+
+        if (opcion === 6) {
+            prenda.src = "BackgroundEraser_20260907_002354824.png";
+        }    
     }
 
 if (categoria === "conjuntos") {
@@ -1400,6 +1418,7 @@ function buscarPrenda() {
         { nombre: "Pants", categoria: "abajo", opcion: 3 },
         { nombre: "Short blanco", categoria: "abajo", opcion: 4 },
         { nombre: "Falda negra", categoria: "abajo", opcion: 5 },
+        { nombre: "Pijama gris", categoria: "abajo", opcion: 6 },
 
         { nombre: "Vestido verde", categoria: "conjuntos", opcion: 1 },
         { nombre: "Vestido amarillo", categoria: "conjuntos", opcion: 2 },
@@ -1590,7 +1609,7 @@ function buscarPrenda() {
         document.getElementById("prenda-conjunto").src = "";
         
         personaje.arriba = Math.floor(Math.random() * 6) + 1;
-        personaje.abajo = Math.floor(Math.random() * 5) + 1;
+        personaje.abajo = Math.floor(Math.random() * 6) + 1;
 
     }
 
