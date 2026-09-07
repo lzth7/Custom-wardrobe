@@ -53,36 +53,49 @@
     padding: 25px;
 
     box-shadow:
-    0 18px 45px rgba(80, 50, 90, 0.18),
-    0 6px 18px rgba(159, 118, 184, 0.16),
-    0 0 0 4px rgba(255, 255, 255, 0.65),
-    inset 0 1px 0 rgba(255, 255, 255, 0.95);
-     }   
+    0 18px 40px rgba(80, 50, 90, 0.20),
+    0 7px 18px rgba(112, 69, 140, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);   
 
     .contenedor {
     position: relative;
     }
 
-    .contenedor::before,
-    .contenedor::after {
+    .contenedor::before {
+    content: "✦  ♡   ✧     ✿   ☆      ✦   ♡";
     position: absolute;
+    top: 10px;
+    left: 25px;
+    right: 25px;
+
     color: #9f76b8;
-    font-size: 22px;
-    opacity: 0.75;
+    font-size: 15px;
+    letter-spacing: 7px;
+    line-height: 1.5;
+
+    opacity: 0.55;
+    transform: rotate(-1deg);
+
     pointer-events: none;
 }
 
-    .contenedor::before {
-    content: "✦  ✧";
-    top: 10px;
-    left: 18px;
-}
+.contenedor::after {
+    content: "✧   ☆   ♡     ✦  ✿      ✧   ♡";
+    position: absolute;
+    bottom: 12px;
+    left: 30px;
+    right: 25px;
 
-    .contenedor::after {
-    content: "✧  ✦";
-    bottom: 10px;
-    right: 18px;
-}    
+    color: #9f76b8;
+    font-size: 14px;
+    letter-spacing: 8px;
+    line-height: 1.5;
+
+    opacity: 0.5;
+    transform: rotate(1.5deg);
+
+    pointer-events: none;
+}
 
     h1 {
     text-align: center;
