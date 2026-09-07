@@ -333,15 +333,30 @@
     margin-top: 10px;
 }
 
-.opciones-fondos {
-    display: none;
-    margin-top: 10px;
-    flex-wrap: wrap;
-    gap: 8px;
+.seccion-ajustes {
+    margin-bottom: 8px;
 }
 
-.opciones-fondos.mostrar {
+.boton-seccion {
+    width: 100%;
+    padding: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.contenido-seccion {
+    display: none;
+    padding: 10px 0;
+}
+
+.contenido-seccion.mostrar {
+    display: block;
+}
+
+.opciones-fondos {
     display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .opciones-fondos button {
@@ -534,95 +549,146 @@
 
 <div id="menu-capas" class="menu-capas">
 
-    <div class="buscador-ajustes">
+    <div class="seccion-ajustes">
 
-    <h3>🔎 Buscar prenda</h3>
+        <button class="boton-seccion" onclick="abrirSeccion('busqueda')">
+            🔎 Buscar prenda
+        </button>
 
-    <input
-        type="text"
-        id="buscador-prendas"
-        placeholder="Busca una prenda..."
-        oninput="buscarPrenda()"
-    >
+        <div id="seccion-busqueda" class="contenido-seccion">
 
-    <div id="resultados-busqueda"></div>
+            <input
+                type="text"
+                id="buscador-prendas"
+                placeholder="Busca una prenda..."
+                oninput="buscarPrenda()"
+            >
+
+            <div id="resultados-busqueda"></div>
+
+        </div>
 
     </div>
 
-<div class="favoritos-ajustes">
 
-    <h3>⭐ Favoritos</h3>
+    <div class="seccion-ajustes">
 
-    <div id="lista-favoritos">
-        <p>No tienes prendas favoritas todavía.</p>
-    </div>
-
-</div>
-
-    <div class="seccion-fondos">
-
-    <button class="boton-seccion" onclick="mostrarFondos()">
-        🎨 Fondos
-    </button>
-
-    <div id="opciones-fondos" class="opciones-fondos">
-
-        <button onclick="cambiarFondo('clasico')">
-            💜 Clásico
+        <button class="boton-seccion" onclick="abrirSeccion('favoritos')">
+            ⭐ Favoritos
         </button>
 
-        <button onclick="cambiarFondo('closet')">
-            👗 Clóset
-        </button>
+        <div id="seccion-favoritos" class="contenido-seccion">
 
-        <button onclick="cambiarFondo('pasarela')">
-            ✨ Pasarela
-        </button>
+            <div id="lista-favoritos">
+                <p>No tienes prendas favoritas todavía.</p>
+            </div>
 
-        <button onclick="cambiarFondo('playa')">
-            🏖️ Playa
-        </button>
+        </div>
 
     </div>
 
-    </div>
-    
-    <h3>✦ Orden de prendas ✦</h3>
 
-    <p>Selecciona una prenda:</p>
+    <div class="seccion-ajustes">
 
-    <select id="prenda-seleccionada">
-        <option value="arriba">👚 Parte superior</option>
-        <option value="abajo">👖 Parte inferior</option>
-        <option value="conjuntos">👗 Vestido / conjunto</option>
-        <option value="zapatos">👠 Zapatos</option>
-        <option value="cabello">💇‍♀️ Cabello</option>
-        <option value="accesorios">🎀 Accesorios</option>
-    </select>
-
-    <div class="controles-capas">
-
-        <button onclick="subirCapa()">
-            ⬆️ Subir
+        <button class="boton-seccion" onclick="abrirSeccion('fondos')">
+            🎨 Fondos
         </button>
 
-        <button onclick="bajarCapa()">
-            ⬇️ Bajar
-        </button>
+        <div id="seccion-fondos" class="contenido-seccion">
 
-    </div>
+            <div class="opciones-fondos">
 
-    <div class="controles-capas">
+                <button onclick="cambiarFondo('clasico')">
+                    💜 Clásico
+                </button>
 
-        <button onclick="frenteCapa()">
-            ⬆️⬆️ Al frente
-        </button>
+                <button onclick="cambiarFondo('closet')">
+                    👗 Clóset
+                </button>
 
-        <button onclick="fondoCapa()">
-            ⬇️⬇️ Al fondo
-        </button>
+                <button onclick="cambiarFondo('pasarela')">
+                    ✨ Pasarela
+                </button>
+
+                <button onclick="cambiarFondo('playa')">
+                    🏖️ Playa
+                </button>
+
+            </div>
+
+        </div>
 
     </div>
+
+
+    <div class="seccion-ajustes">
+
+        <button class="boton-seccion" onclick="abrirSeccion('capas')">
+            ✦ Orden de prendas ✦
+        </button>
+
+        <div id="seccion-capas" class="contenido-seccion">
+
+            <p>Selecciona una prenda:</p>
+
+            <select id="prenda-seleccionada">
+
+                <option value="arriba">
+                    👚 Parte superior
+                </option>
+
+                <option value="abajo">
+                    👖 Parte inferior
+                </option>
+
+                <option value="conjuntos">
+                    👗 Vestido / conjunto
+                </option>
+
+                <option value="zapatos">
+                    👠 Zapatos
+                </option>
+
+                <option value="cabello">
+                    💇‍♀️ Cabello
+                </option>
+
+                <option value="accesorios">
+                    🎀 Accesorios
+                </option>
+
+            </select>
+
+
+            <div class="controles-capas">
+
+                <button onclick="subirCapa()">
+                    ⬆️ Subir
+                </button>
+
+                <button onclick="bajarCapa()">
+                    ⬇️ Bajar
+                </button>
+
+            </div>
+
+
+            <div class="controles-capas">
+
+                <button onclick="frenteCapa()">
+                    ⬆️⬆️ Al frente
+                </button>
+
+                <button onclick="fondoCapa()">
+                    ⬇️⬇️ Al fondo
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
 
     <button class="cerrar-capas" onclick="mostrarMenuCapas()">
         ✓ Listo
@@ -1667,16 +1733,6 @@ function moverCarrusel(categoria, direccion) {
     });
         }
 
-function mostrarFondos() {
-    const opciones = document.getElementById("opciones-fondos");
-
-    if (opciones.classList.contains("mostrar")) {
-        opciones.classList.remove("mostrar");
-    } else {
-        opciones.classList.add("mostrar");
-    }
-}
-
 function cambiarFondo(fondo) {
     const zona = document.querySelector(".zona-personaje");
 
@@ -1704,6 +1760,30 @@ function cambiarFondo(fondo) {
     zona.style.backgroundPosition = "center";
     zona.style.backgroundRepeat = "no-repeat";
         }
+
+function abrirSeccion(seccion) {
+
+    const secciones = [
+        "busqueda",
+        "favoritos",
+        "fondos",
+        "capas"
+    ];
+
+    secciones.forEach(nombre => {
+
+        const contenido =
+            document.getElementById("seccion-" + nombre);
+
+        if (nombre === seccion) {
+            contenido.classList.toggle("mostrar");
+        } else {
+            contenido.classList.remove("mostrar");
+        }
+
+    });
+
+}
         
     </script>
 
