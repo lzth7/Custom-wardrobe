@@ -533,6 +533,7 @@ button:active {
                    <button onclick="cambiarOpcion('conjuntos', 3)">Bikini amarillo</button>
                    <button onclick="cambiarOpcion('conjuntos', 4)">Corset blanco</button>
                    <button onclick="cambiarOpcion('conjuntos', 5)">Negro elegante</button>
+                   <button onclick="cambiarOpcion('conjuntos', 6)">Bikini café</button>
     </div>
             </div>
 
@@ -1039,6 +1040,22 @@ button:active {
             personaje.abajo = 0;
         }
       }      
+
+              if (opcion === 6) {
+
+        if (prenda.src.includes("BackgroundEraser_20260907_135344487.png")) {
+            prenda.src = "";
+            personaje.conjuntos = 0;
+        } else {
+            prenda.src = "BackgroundEraser_20260907_135344487.png";
+            personaje.conjuntos = 6;
+
+            arriba.src = "";
+            abajo.src = "";
+            personaje.arriba = 0;
+            personaje.abajo = 0;
+        }
+      }        
             }
 
             if (categoria === "cabello") {
@@ -1338,6 +1355,10 @@ if (categoria === "conjuntos") {
     if (opcion === 5) {
         prenda.src = "BackgroundEraser_20260818_160310082.png";
     }    
+
+    if (opcion === 6) {
+        prenda.src = "BackgroundEraser_20260907_135344487.png";
+    }    
         }
             
     if (categoria === "zapatos") {
@@ -1433,6 +1454,7 @@ function buscarPrenda() {
         { nombre: "Bikini amarillo", categoria: "conjuntos", opcion: 3 },
         { nombre: "Corset blanco", categoria: "conjuntos", opcion: 4 },
         { nombre: "Negro elegante", categoria: "conjuntos", opcion: 5 },
+        { nombre: "Bikini café", categoria: "conjuntos", opcion: 6 },
 
         { nombre: "Tenis blancos", categoria: "zapatos", opcion: 1 },
         { nombre: "Botas negras", categoria: "zapatos", opcion: 2 },
@@ -1606,7 +1628,7 @@ function buscarPrenda() {
 
     if (usarConjunto === 1) {
 
-        personaje.conjuntos = Math.floor(Math.random() * 5) + 1;
+        personaje.conjuntos = Math.floor(Math.random() * 6) + 1;
         personaje.arriba = 0;
         personaje.abajo = 0;
 
