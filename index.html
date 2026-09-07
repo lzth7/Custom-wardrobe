@@ -35,18 +35,26 @@
             box-shadow: 0 10px 30px rgba(80, 50, 90, 0.15);
         }
 
-        h1 {
+    h1 {
     text-align: center;
-    color: #70458c;
     margin-top: 0;
     font-family: "Cherry Bomb One", cursive;
+}
 
-    -webkit-text-stroke: 2px #ffffff;
+.texto-titulo {
+    color: #70458c;
+
+    -webkit-text-stroke: 1px #ffffff;
 
     text-shadow:
-        0 3px 0 #c9a6d8,
-        0 5px 8px rgba(80, 50, 90, 0.18);
-        }
+        0 4px 0 #c5a0d5,
+        0 7px 10px rgba(80, 50, 90, 0.22);
+}
+
+.decoracion-titulo {
+    color: #70458c;
+    margin: 0 12px;
+}    
 
         .zona-personaje {
     position: relative;
@@ -396,7 +404,11 @@ button:active {
 
     <main class="contenedor">
 
-        <h1>✦ Mi personaje ✦</h1>
+        <h1>
+    <span class="decoracion-titulo">✦</span>
+    <span class="texto-titulo">Mi personaje</span>
+    <span class="decoracion-titulo">✦</span>
+        </h1>
 
         <div class="zona-personaje">
     <img class="personaje-prueba" src="BackgroundEraser_20260810_011304800.png" alt="Mi personaje">
