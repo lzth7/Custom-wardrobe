@@ -57,11 +57,6 @@
      max-height: 900px;        
         }
 
-        .zona-personaje {
-    display: grid;
-    place-items: center;
-}
-
 .zona-personaje img {
     width: 95%;
     height: auto;
@@ -248,15 +243,6 @@
     transform: scale(1.05);
         }
 
-.buscador-ajustes {
-    margin-bottom: 25px;
-}
-
-.buscador-ajustes h3 {
-    margin-top: 0;
-    color: #70458c;
-}
-
 #buscador-prendas {
     width: 100%;
     padding: 12px;
@@ -276,18 +262,13 @@
 }
 
 .resultado-prenda {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     width: 100%;
     text-align: left;
 }
 
-.favoritos-ajustes {
-    margin-bottom: 25px;
-}
-
-.favoritos-ajustes h3 {
-    color: #70458c;
-    margin-bottom: 10px;
-}
 
 #lista-favoritos {
     display: flex;
@@ -309,13 +290,6 @@
 .boton-favorito {
     width: 42px;
     padding: 8px;
-}
-
-.resultado-prenda {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    width: 100%;
 }
 
 .resultado-prenda .nombre-favorito {
@@ -357,6 +331,14 @@
 
 .opciones-fondos button {
     flex: 1 1 45%;
+}
+
+.buscador-ajustes {
+    margin-bottom: 0;
+}
+
+.favoritos-ajustes {
+    margin-bottom: 0;
 }
         
     </style>
