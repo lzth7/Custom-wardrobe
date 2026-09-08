@@ -1536,9 +1536,7 @@ prendaAnimada.classList.remove("animar-cambio");
 void prendaAnimada.offsetWidth;
 prendaAnimada.classList.add("animar-cambio");
 
-if (personaje[categoria] > 0) {
-    actualizarPrendaSeleccionada(categoria, personaje[categoria]);
-        }        
+actualizarPrendasSeleccionadas();        
             
     console.log(personaje);
                 }
@@ -1975,20 +1973,7 @@ zonaPersonaje.classList.remove("animar-aleatorio");
 void zonaPersonaje.offsetWidth;
 zonaPersonaje.classList.add("animar-aleatorio");   
 
-actualizarPrendaSeleccionada("cabello", personaje.cabello);
-actualizarPrendaSeleccionada("zapatos", personaje.zapatos);
-actualizarPrendaSeleccionada("accesorios", personaje.accesorios);
-
-if (personaje.conjuntos > 0) {
-
-    actualizarPrendaSeleccionada("conjuntos", personaje.conjuntos);
-
-} else {
-
-    actualizarPrendaSeleccionada("arriba", personaje.arriba);
-    actualizarPrendaSeleccionada("abajo", personaje.abajo);
-
-}
+actualizarPrendasSeleccionadas();
 
 console.log(personaje);
         }
@@ -2211,20 +2196,39 @@ function abrirSeccion(seccion) {
 
 }
 
-     function actualizarPrendaSeleccionada(categoria, opcion) {
+   function actualizarPrendasSeleccionadas() {
 
-    const botones = document.querySelectorAll(
-        "#botones-" + categoria + " button"
-    );
+    const categorias = [
+        "cabello",
+        "arriba",
+        "abajo",
+        "conjuntos",
+        "zapatos",
+        "accesorios"
+    ];
 
-    botones.forEach((boton, indice) => {
-        boton.classList.remove("prenda-seleccionada");
+    categorias.forEach(categoria => {
 
-        if (indice + 1 === opcion) {
-            boton.classList.add("prenda-seleccionada");
+        const botones = document.querySelectorAll(
+            "#botones-" + categoria + " button"
+        );
+
+        botones.forEach(boton => {
+            boton.classList.remove("prenda-seleccionada");
+        });
+
+        const opcion = personaje[categoria];
+
+        if (opcion > 0) {
+
+            const botonSeleccionado = botones[opcion - 1];
+
+            if (botonSeleccionado) {
+                botonSeleccionado.classList.add("prenda-seleccionada");
+            }
         }
     });
-        }   
+   }     
         
     </script>
 
