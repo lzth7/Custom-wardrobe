@@ -648,6 +648,15 @@ button:active {
         opacity: 1;
     }
 }      
+
+  .prenda-seleccionada {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow:
+        0 7px 14px rgba(80, 50, 90, 0.24),
+        inset 0 2px 4px rgba(255, 255, 255, 0.75),
+        inset 0 -2px 3px rgba(112, 69, 140, 0.15);
+    border-color: rgba(112, 69, 140, 0.4);
+  }      
         
     </style>
 </head>
@@ -1526,6 +1535,10 @@ button:active {
 prendaAnimada.classList.remove("animar-cambio");
 void prendaAnimada.offsetWidth;
 prendaAnimada.classList.add("animar-cambio");
+
+if (personaje[categoria] > 0) {
+    actualizarPrendaSeleccionada(categoria, personaje[categoria]);
+        }        
             
     console.log(personaje);
                 }
@@ -1962,6 +1975,24 @@ zonaPersonaje.classList.remove("animar-aleatorio");
 void zonaPersonaje.offsetWidth;
 zonaPersonaje.classList.add("animar-aleatorio");   
 
+actualizarPrendaSeleccionada("cabello", personaje.cabello);
+actualizarPrendaSeleccionada("zapatos", personaje.zapatos);
+actualizarPrendaSeleccionada("accesorios", personaje.accesorios);
+
+if (personaje.conjuntos > 0) {
+
+    actualizarPrendaSeleccionada("conjuntos", personaje.conjuntos);
+
+} else {
+
+    actualizarPrendaSeleccionada("arriba", personaje.arriba);
+    actualizarPrendaSeleccionada("abajo", personaje.abajo);
+
+}
+
+console.log(personaje);
+        }
+        
     console.log(personaje);
         }
 
@@ -2181,6 +2212,21 @@ function abrirSeccion(seccion) {
     });
 
 }
+
+     function actualizarPrendaSeleccionada(categoria, opcion) {
+
+    const botones = document.querySelectorAll(
+        "#botones-" + categoria + " button"
+    );
+
+    botones.forEach((boton, indice) => {
+        boton.classList.remove("prenda-seleccionada");
+
+        if (indice + 1 === opcion) {
+            boton.classList.add("prenda-seleccionada");
+        }
+    });
+        }   
         
     </script>
 
