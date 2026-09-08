@@ -547,6 +547,75 @@ button:active {
     opacity: 0.45;
     transform: rotate(10deg);
                       }       
+
+.adorno-titulo {
+    width: 100%;
+    max-width: 760px;
+    height: 42px;
+
+    margin: 0 auto 2px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    pointer-events: none;
+}
+
+.moñito {
+    color: #70458c;
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    line-height: 1;
+
+    text-shadow:
+        0 2px 4px rgba(112, 69, 140, 0.18);
+}
+
+.linea-adorno {
+    position: relative;
+    width: 34%;
+    height: 24px;
+    border-top: 2px solid #9f76b8;
+    opacity: 0.72;
+}
+
+.linea-adorno.izquierda {
+    border-radius: 80% 20% 0 0;
+    transform: rotate(-3deg);
+}
+
+.linea-adorno.derecha {
+    border-radius: 20% 80% 0 0;
+    transform: rotate(3deg);
+}
+
+.linea-adorno::after {
+    content: "";
+    position: absolute;
+
+    width: 16px;
+    height: 16px;
+
+    border: 2px solid #9f76b8;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+
+    border-radius: 50%;
+
+    top: -10px;
+}
+
+.linea-adorno.izquierda::after {
+    left: -2px;
+    transform: rotate(-45deg);
+}
+
+.linea-adorno.derecha::after {
+    right: -2px;
+    transform: rotate(45deg);
+}
         
     </style>
 </head>
@@ -575,6 +644,14 @@ button:active {
         </div>
 
         <h1>
+    <div class="adorno-titulo" aria-hidden="true">
+    <span class="linea-adorno izquierda"></span>
+
+    <span class="moñito">၄၃</span>
+
+    <span class="linea-adorno derecha"></span>
+    </div>
+            
     <span class="decoracion-titulo">✦</span>
     <span class="texto-titulo">Mi personaje</span>
     <span class="decoracion-titulo">✦</span>
