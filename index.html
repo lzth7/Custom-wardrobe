@@ -187,10 +187,23 @@ button:active {
     right: 20px;
     width: 280px;
     padding: 20px;
-    background: #f3e7f7;
-    border-radius: 18px;
+
+    background: linear-gradient(
+        145deg,
+        #faf2fc 0%,
+        #f3e7f7 55%,
+        #ead9f0 100%
+    );
+
+    border: 2px solid rgba(112, 69, 140, 0.12);
+    border-radius: 22px;
+
     text-align: center;
-    box-shadow: 0 10px 30px rgba(80, 50, 90, 0.2);
+
+    box-shadow:
+        0 14px 30px rgba(80, 50, 90, 0.18),
+        0 4px 10px rgba(112, 69, 140, 0.10);
+
     z-index: 999;
 }
 
@@ -406,6 +419,19 @@ button:active {
 .favoritos-ajustes {
     margin-bottom: 0;
 }
+
+ .titulo-ajustes {
+    margin: 0 0 16px;
+    text-align: center;
+
+    color: #70458c;
+    font-family: "DM Serif Display", serif;
+    font-size: 22px;
+    font-weight: normal;
+
+    text-shadow:
+        0 2px 4px rgba(112, 69, 140, 0.15);
+ }       
 
 .decoraciones-fondo {
     position: absolute;
@@ -790,7 +816,11 @@ button:active {
                 </div>      
 
 <div id="menu-capas" class="menu-capas">
-
+    
+   <h3 class="titulo-ajustes">
+    ⚙︎ Ajustes ⚙︎
+   </h3>
+    
     <div class="seccion-ajustes">
 
         <button class="boton-seccion" onclick="abrirSeccion('busqueda')">
