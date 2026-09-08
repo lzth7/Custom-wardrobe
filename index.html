@@ -634,6 +634,20 @@ button:active {
         transform: scale(1);
     }
 }        
+
+  .animar-fondo {
+    animation: cambiarFondoSuave 0.35s ease;
+}
+
+@keyframes cambiarFondoSuave {
+    from {
+        opacity: 0.65;
+    }
+
+    to {
+        opacity: 1;
+    }
+}      
         
     </style>
 </head>
@@ -2138,6 +2152,10 @@ function cambiarFondo(fondo) {
     zona.style.backgroundSize = "cover";
     zona.style.backgroundPosition = "center";
     zona.style.backgroundRepeat = "no-repeat";
+
+    zona.classList.remove("animar-fondo");
+    void zona.offsetWidth;
+    zona.classList.add("animar-fondo");    
         }
 
 function abrirSeccion(seccion) {
