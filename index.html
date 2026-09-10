@@ -1039,6 +1039,17 @@ button:active {
 
     <div class="ajuste-prenda">
 
+  <p>Selecciona una prenda:</p>
+
+<select id="categoria-ajuste" onchange="cargarAjusteSeleccionado()">
+    <option value="cabello">Cabello</option>
+    <option value="arriba">Parte superior</option>
+    <option value="abajo">Parte inferior</option>
+    <option value="zapatos">Zapatos</option>
+    <option value="accesorios">Accesorios</option>
+    <option value="conjuntos">Conjuntos</option>
+</select>
+        
         <p>✦ Ajustar prenda ✦</p>
 
         <label for="ajuste-vertical">↕️ Subir / Bajar</label>
@@ -1157,7 +1168,7 @@ function obtenerElementoAjuste(categoria) {
 
 function obtenerClaveAjuste() {
     const categoria =
-        document.getElementById("prenda-seleccionada").value;
+        document.getElementById(""categoria-ajuste"").value;
 
     const opcion = personaje[categoria];
 
@@ -1176,7 +1187,7 @@ function obtenerAjusteActual() {
 
 function aplicarAjusteActual() {
     const categoria =
-        document.getElementById("prenda-seleccionada").value;
+        document.getElementById(""categoria-ajuste"").value;
 
     const elemento = obtenerElementoAjuste(categoria);
 
