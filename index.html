@@ -216,6 +216,49 @@ button:active {
     flex: 1;
 }
 
+.ajuste-prenda {
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(112, 69, 140, 0.12);
+}
+
+.ajuste-prenda > p {
+    margin: 0 0 14px;
+    color: #70458c;
+    font-weight: bold;
+}
+
+.ajuste-prenda label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    color: #392542;
+    font-size: 13px;
+}
+
+.control-ajuste {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.control-ajuste button {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.control-ajuste input[type="range"] {
+    flex: 1;
+    accent-color: #8c5aa8;
+}
+
+.ajuste-prenda > button {
+    width: 100%;
+    margin-top: 10px;
+}
+        
 .cerrar-capas {
     width: 100%;
     margin-top: 15px;
@@ -987,6 +1030,74 @@ button:active {
 
             </div>
 
+           <div class="ajuste-prenda">
+
+    <p>✦ Ajustar prenda ✦</p>
+
+    <label for="ajuste-vertical">↕️ Subir / Bajar</label>
+
+    <div class="control-ajuste">
+        <button onclick="ajustarVertical(-1)">−</button>
+
+        <input
+            type="range"
+            id="ajuste-vertical"
+            min="-50"
+            max="50"
+            value="0"
+            oninput="moverVertical(this.value)"
+        >
+
+        <button onclick="ajustarVertical(1)">+</button>
+    </div>
+
+
+    <label for="ajuste-horizontal">↔️ Izquierda / Derecha</label>
+
+    <div class="control-ajuste">
+        <button onclick="ajustarHorizontal(-1)">−</button>
+
+        <input
+            type="range"
+            id="ajuste-horizontal"
+            min="-50"
+            max="50"
+            value="0"
+            oninput="moverHorizontal(this.value)"
+        >
+
+        <button onclick="ajustarHorizontal(1)">+</button>
+    </div>
+
+
+    <label for="ajuste-tamano">🔍 Tamaño</label>
+
+    <div class="control-ajuste">
+        <button onclick="ajustarTamano(-1)">−</button>
+
+        <input
+            type="range"
+            id="ajuste-tamano"
+            min="80"
+            max="120"
+            value="100"
+            oninput="cambiarTamano(this.value)"
+        >
+
+        <button onclick="ajustarTamano(1)">+</button>
+    </div>
+
+
+    <button onclick="guardarAjuste()">
+        💾 Guardar ajuste
+    </button>
+
+    <button onclick="restaurarAjuste()">
+        ↩️ Restaurar original
+    </button>
+
+           </div>
+            
         </div>
 
     </div>
