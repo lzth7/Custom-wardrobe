@@ -1030,85 +1030,87 @@ button:active {
 
             </div>
 
-           <button class="boton-seccion" onclick="abrirSeccion('ajustar')">
+         <button class="boton-seccion" onclick="abrirSeccion('ajustar')">
     ✦ Ajustar prenda ✦
-           </button>
+</button>
 
-    <label for="ajuste-vertical">↕️ Subir / Bajar</label>
+<div id="seccion-ajustar" class="contenido-seccion">
 
-    <div class="control-ajuste">
-        <button onclick="ajustarVertical(-1)">−</button>
+    <div class="ajuste-prenda">
 
-        <input
-            type="range"
-            id="ajuste-vertical"
-            min="-50"
-            max="50"
-            value="0"
-            oninput="moverVertical(this.value)"
-        >
+        <p>✦ Ajustar prenda ✦</p>
 
-        <button onclick="ajustarVertical(1)">+</button>
-    </div>
+        <label for="ajuste-vertical">↕️ Subir / Bajar</label>
 
+        <div class="control-ajuste">
+            <button onclick="ajustarVertical(-1)">−</button>
 
-    <label for="ajuste-horizontal">↔️ Izquierda / Derecha</label>
+            <input
+                type="range"
+                id="ajuste-vertical"
+                min="-50"
+                max="50"
+                value="0"
+                oninput="moverVertical(this.value)"
+            >
 
-    <div class="control-ajuste">
-        <button onclick="ajustarHorizontal(-1)">−</button>
-
-        <input
-            type="range"
-            id="ajuste-horizontal"
-            min="-50"
-            max="50"
-            value="0"
-            oninput="moverHorizontal(this.value)"
-        >
-
-        <button onclick="ajustarHorizontal(1)">+</button>
-    </div>
-
-
-    <label for="ajuste-tamano">🔍 Tamaño</label>
-
-    <div class="control-ajuste">
-        <button onclick="ajustarTamano(-1)">−</button>
-
-        <input
-            type="range"
-            id="ajuste-tamano"
-            min="80"
-            max="120"
-            value="100"
-            oninput="cambiarTamano(this.value)"
-        >
-
-        <button onclick="ajustarTamano(1)">+</button>
-    </div>
-
-
-    <button onclick="guardarAjuste()">
-        💾 Guardar ajuste
-    </button>
-
-    <button onclick="restaurarAjuste()">
-        ↩️ Restaurar original
-    </button>
-
-           </div>
-            
+            <button onclick="ajustarVertical(1)">+</button>
         </div>
 
+
+        <label for="ajuste-horizontal">↔️ Izquierda / Derecha</label>
+
+        <div class="control-ajuste">
+            <button onclick="ajustarHorizontal(-1)">−</button>
+
+            <input
+                type="range"
+                id="ajuste-horizontal"
+                min="-50"
+                max="50"
+                value="0"
+                oninput="moverHorizontal(this.value)"
+            >
+
+            <button onclick="ajustarHorizontal(1)">+</button>
+        </div>
+
+
+        <label for="ajuste-tamano">🔍 Tamaño</label>
+
+        <div class="control-ajuste">
+            <button onclick="ajustarTamano(-1)">−</button>
+
+            <input
+                type="range"
+                id="ajuste-tamano"
+                min="80"
+                max="120"
+                value="100"
+                oninput="cambiarTamano(this.value)"
+            >
+
+            <button onclick="ajustarTamano(1)">+</button>
+        </div>
+
+
+        <button onclick="guardarAjuste()">
+            💾 Guardar ajuste
+        </button>
+
+        <button onclick="restaurarAjuste()">
+            ↩️ Restaurar original
+        </button>
+
     </div>
-
-
-    <button class="cerrar-capas" onclick="mostrarMenuCapas()">
-        ✓ Listo
-    </button>
 
 </div>
 
+
+<button class="cerrar-capas" onclick="mostrarMenuCapas()">
+    ✓ Listo
+</button>
+            
         </section>
 
           <div class="botones-flotantes">
@@ -2279,6 +2281,7 @@ function abrirSeccion(seccion) {
         "favoritos",
         "fondos",
         "capas"
+        "ajustar"
     ];
 
     secciones.forEach(nombre => {
