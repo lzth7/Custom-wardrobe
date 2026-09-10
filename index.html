@@ -1208,6 +1208,48 @@ function aplicarAjusteActual() {
 
     aplicarAjusteActual();
     }
+
+    function ajustarVertical(cantidad) {
+    const slider = document.getElementById("ajuste-vertical");
+    slider.value = Number(slider.value) + cantidad;
+    moverVertical(slider.value);
+}
+
+function moverVertical(valor) {
+    const ajuste = obtenerAjusteActual();
+    ajuste.y = Number(valor);
+
+    const categoria =
+        document.getElementById("categoria-ajuste").value;
+
+    const elemento = obtenerElementoAjuste(categoria);
+
+    if (elemento) {
+        elemento.style.transform =
+            `translate(${ajuste.x}px, ${ajuste.y}px) scale(${ajuste.escala / 100})`;
+    }
+}    
+
+    function ajustarHorizontal(cantidad) {
+    const slider = document.getElementById("ajuste-horizontal");
+    slider.value = Number(slider.value) + cantidad;
+    moverHorizontal(slider.value);
+}
+
+function moverHorizontal(valor) {
+    const ajuste = obtenerAjusteActual();
+    ajuste.x = Number(valor);
+
+    const categoria =
+        document.getElementById("categoria-ajuste").value;
+
+    const elemento = obtenerElementoAjuste(categoria);
+
+    if (elemento) {
+        elemento.style.transform =
+            `translate(${ajuste.x}px, ${ajuste.y}px) scale(${ajuste.escala / 100})`;
+    }
+}    
         
         function cambiarOpcion(categoria, opcion) {
 
