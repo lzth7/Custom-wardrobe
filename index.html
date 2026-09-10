@@ -1199,6 +1199,16 @@ function aplicarAjusteActual() {
         `translate(${ajuste.x}px, ${ajuste.y}px) scale(${ajuste.escala / 100})`;
 }
 
+    function cargarAjusteSeleccionado() {
+    const ajuste = obtenerAjusteActual();
+
+    document.getElementById("ajuste-vertical").value = ajuste.y;
+    document.getElementById("ajuste-horizontal").value = ajuste.x;
+    document.getElementById("ajuste-tamano").value = ajuste.escala;
+
+    aplicarAjusteActual();
+    }
+        
         function cambiarOpcion(categoria, opcion) {
 
     personaje[categoria] = opcion;
