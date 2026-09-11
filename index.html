@@ -2296,9 +2296,7 @@ function buscarPrenda() {
             ...personaje
         },
 
-        ajustes: {
-            ...ajustesPrendas
-        }
+        ajustes: JSON.parse(JSON.stringify(ajustesPrendas))
     };
 
     outfitsGuardados.push(nuevoOutfit);
@@ -2617,6 +2615,9 @@ function abrirSeccion(seccion) {
 
     });
 
+    if (seccion === "outfits") {
+           mostrarOutfits();
+        }
 }
 
    function actualizarPrendasSeleccionadas() {
