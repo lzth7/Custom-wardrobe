@@ -2320,12 +2320,25 @@ function buscarPrenda() {
         const elemento = document.createElement("div");
 
         elemento.innerHTML = `
-            <span>♡ ${outfit.nombre}</span>
-            <button onclick="usarOutfit(${indice})">Usar</button>
-        `;
-
+    <span>♡ ${outfit.nombre}</span>
+    <button onclick="usarOutfit(${indice})">Usar</button>
+    <button onclick="eliminarOutfit(${indice})">⌫</button>
+`;
+        
         lista.appendChild(elemento);
     });
+        }
+
+        function eliminarOutfit(indice) {
+
+    outfitsGuardados.splice(indice, 1);
+
+    localStorage.setItem(
+        "outfitsGuardados",
+        JSON.stringify(outfitsGuardados)
+    );
+
+    mostrarOutfits();
         }
 
         function usarOutfit(indice) {
