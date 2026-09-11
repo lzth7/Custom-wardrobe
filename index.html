@@ -1209,6 +1209,23 @@ function aplicarAjusteActual() {
     aplicarAjusteActual();
     }
 
+    function aplicarAjusteDeCategoria(categoria) {
+    const elemento = obtenerElementoAjuste(categoria);
+
+    if (!elemento) return;
+
+    const clave = categoria + "-" + personaje[categoria];
+
+    const ajuste = ajustesPrendas[clave] || {
+        x: 0,
+        y: 0,
+        escala: 100
+    };
+
+    elemento.style.transform =
+        `translate(${ajuste.x}px, ${ajuste.y}px) scale(${ajuste.escala / 100})`;
+    }    
+
     function ajustarVertical(cantidad) {
     const slider = document.getElementById("ajuste-vertical");
     slider.value = Number(slider.value) + cantidad;
@@ -1275,6 +1292,7 @@ function cambiarTamano(valor) {
         function cambiarOpcion(categoria, opcion) {
 
     personaje[categoria] = opcion;
+    aplicarAjusteDeCategoria(categoria);        
 
    if (categoria === "arriba") {
 
