@@ -1226,6 +1226,23 @@ function aplicarAjusteActual() {
         `translate(${ajuste.x}px, ${ajuste.y}px) scale(${ajuste.escala / 100})`;
     }    
 
+    function aplicarTodosLosAjustes() {
+    const categorias = [
+        "cabello",
+        "arriba",
+        "abajo",
+        "conjuntos",
+        "zapatos",
+        "accesorios"
+    ];
+
+    categorias.forEach(categoria => {
+        if (personaje[categoria] > 0) {
+            aplicarAjusteDeCategoria(categoria);
+        }
+    });
+        }    
+
     function ajustarVertical(cantidad) {
     const slider = document.getElementById("ajuste-vertical");
     slider.value = Number(slider.value) + cantidad;
@@ -2255,6 +2272,7 @@ void zonaPersonaje.offsetWidth;
 zonaPersonaje.classList.add("animar-aleatorio");   
 
 actualizarPrendasSeleccionadas();
+aplicarTodosLosAjustes();            
 
         }
 
