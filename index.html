@@ -2329,6 +2329,33 @@ function buscarPrenda() {
         lista.appendChild(elemento);
     });
         }
+
+        function usarOutfit(indice) {
+
+    const outfit = outfitsGuardados[indice];
+
+    personaje = {
+        ...outfit.personaje
+    };
+
+    ajustesPrendas = {
+        ...outfit.ajustes
+    };
+
+    if (personaje.conjuntos > 0) {
+        mostrarOpcion("conjuntos", personaje.conjuntos);
+    } else {
+        mostrarOpcion("arriba", personaje.arriba);
+        mostrarOpcion("abajo", personaje.abajo);
+    }
+
+    mostrarOpcion("cabello", personaje.cabello);
+    mostrarOpcion("zapatos", personaje.zapatos);
+    mostrarOpcion("accesorios", personaje.accesorios);
+
+    actualizarPrendasSeleccionadas();
+    aplicarTodosLosAjustes();
+        }
         
         function aleatorio() {
 
