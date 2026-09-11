@@ -743,6 +743,7 @@ button:active {
                 <button onclick="cambiarOpcion('cabello', 4)">Lacio</button>
                 <button onclick="cambiarOpcion('cabello', 5)">Coletas rubias</button>
                 <button onclick="cambiarOpcion('cabello', 6)">Moños castaños</button>
+                <button onclick="cambiarOpcion('cabello', 7)">Coleta alta</button>
             </div>
         </div>
 
@@ -1699,6 +1700,17 @@ function cambiarTamano(valor) {
             personaje.cabello = 6;
         }
                 }
+
+                if (opcion === 7) {
+
+        if (prenda.src.includes("BackgroundEraser_20260911_112738112.png")) {
+            prenda.src = "";
+            personaje.cabello = 0;
+        } else {
+            prenda.src = "BackgroundEraser_20260911_112738112.png";
+            personaje.cabello = 7;
+        }
+                }
             }            
 
             if (categoria === "zapatos") {
@@ -1878,6 +1890,10 @@ actualizarPrendasSeleccionadas();
 
         if (opcion === 6) {
             prenda.src = "BackgroundEraser_20260908_123654109.png";
+        }    
+
+        if (opcion === 7) {
+            prenda.src = "BackgroundEraser_20260911_112738112.png";
         }    
     }
 
@@ -2060,6 +2076,7 @@ function buscarPrenda() {
         { nombre: "Lacio", categoria: "cabello", opcion: 4 },
         { nombre: "Coletas rubias", categoria: "cabello", opcion: 5 },
         { nombre: "Moños castaños", categoria: "cabello", opcion: 6 },
+        { nombre: "Coleta alta", categoria: "cabello", opcion: 7 },
 
         { nombre: "Lunares", categoria: "arriba", opcion: 1 },
         { nombre: "Hombrera negra", categoria: "arriba", opcion: 2 },
@@ -2248,7 +2265,7 @@ function buscarPrenda() {
         
         function aleatorio() {
 
-    personaje.cabello = Math.floor(Math.random() * 6) + 1;
+    personaje.cabello = Math.floor(Math.random() * 7) + 1;
     personaje.zapatos = Math.floor(Math.random() * 6) + 1;
     personaje.accesorios = Math.floor(Math.random() * 6) + 1;
 
