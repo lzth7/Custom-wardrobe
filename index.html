@@ -1250,6 +1250,27 @@ function moverHorizontal(valor) {
             `translate(${ajuste.x}px, ${ajuste.y}px) scale(${ajuste.escala / 100})`;
     }
 }    
+
+    function ajustarTamano(cantidad) {
+    const slider = document.getElementById("ajuste-tamano");
+    slider.value = Number(slider.value) + cantidad;
+    cambiarTamano(slider.value);
+}
+
+function cambiarTamano(valor) {
+    const ajuste = obtenerAjusteActual();
+    ajuste.escala = Number(valor);
+
+    const categoria =
+        document.getElementById("categoria-ajuste").value;
+
+    const elemento = obtenerElementoAjuste(categoria);
+
+    if (elemento) {
+        elemento.style.transform =
+            `translate(${ajuste.x}px, ${ajuste.y}px) scale(${ajuste.escala / 100})`;
+    }
+}    
         
         function cambiarOpcion(categoria, opcion) {
 
