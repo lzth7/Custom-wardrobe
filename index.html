@@ -1322,6 +1322,23 @@ function cambiarTamano(valor) {
 
     aplicarAjusteActual();
    }     
+
+   function restaurarAjuste() {
+    const clave = obtenerClaveAjuste();
+
+    delete ajustesPrendas[clave];
+
+    localStorage.setItem(
+        "ajustesPrendas",
+        JSON.stringify(ajustesPrendas)
+    );
+
+    document.getElementById("ajuste-vertical").value = 0;
+    document.getElementById("ajuste-horizontal").value = 0;
+    document.getElementById("ajuste-tamano").value = 100;
+
+    aplicarAjusteActual();
+   }     
         
         function cambiarOpcion(categoria, opcion) {
 
