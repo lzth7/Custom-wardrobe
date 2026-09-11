@@ -2286,6 +2286,30 @@ function buscarPrenda() {
 
         let outfitsGuardados =
     JSON.parse(localStorage.getItem("outfitsGuardados")) || [];
+
+        function guardarOutfit() {
+
+    const nuevoOutfit = {
+        nombre: "Outfit " + (outfitsGuardados.length + 1),
+
+        personaje: {
+            ...personaje
+        },
+
+        ajustes: {
+            ...ajustesPrendas
+        }
+    };
+
+    outfitsGuardados.push(nuevoOutfit);
+
+    localStorage.setItem(
+        "outfitsGuardados",
+        JSON.stringify(outfitsGuardados)
+    );
+
+    mostrarOutfits();
+        }
         
         function aleatorio() {
 
