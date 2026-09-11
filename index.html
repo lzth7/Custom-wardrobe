@@ -2310,6 +2310,25 @@ function buscarPrenda() {
 
     mostrarOutfits();
         }
+
+        function mostrarOutfits() {
+
+    const lista = document.getElementById("lista-outfits");
+
+    lista.innerHTML = "";
+
+    outfitsGuardados.forEach((outfit, indice) => {
+
+        const elemento = document.createElement("div");
+
+        elemento.innerHTML = `
+            <span>♡ ${outfit.nombre}</span>
+            <button onclick="usarOutfit(${indice})">Usar</button>
+        `;
+
+        lista.appendChild(elemento);
+    });
+        }
         
         function aleatorio() {
 
