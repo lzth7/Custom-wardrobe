@@ -1288,6 +1288,23 @@ function cambiarTamano(valor) {
             `translate(${ajuste.x}px, ${ajuste.y}px) scale(${ajuste.escala / 100})`;
     }
 }    
+
+   function guardarAjuste() {
+    const clave = obtenerClaveAjuste();
+
+    ajustesPrendas[clave] = {
+        x: Number(document.getElementById("ajuste-horizontal").value),
+        y: Number(document.getElementById("ajuste-vertical").value),
+        escala: Number(document.getElementById("ajuste-tamano").value)
+    };
+
+    localStorage.setItem(
+        "ajustesPrendas",
+        JSON.stringify(ajustesPrendas)
+    );
+
+    aplicarAjusteActual();
+   }     
         
         function cambiarOpcion(categoria, opcion) {
 
