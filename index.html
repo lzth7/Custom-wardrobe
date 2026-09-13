@@ -2307,6 +2307,8 @@ function buscarPrenda() {
         let outfitsGuardados =
     JSON.parse(localStorage.getItem("outfitsGuardados")) || [];
 
+        let outfitsEditando = false;
+
         function guardarOutfit() {
 
     const nuevoOutfit = {
@@ -2335,19 +2337,69 @@ function buscarPrenda() {
 
     lista.innerHTML = "";
 
+    const botonEdicion = document.createElement("button");
+
+    botonEdicion.textContent = outfitsEditando ? "✓" : "✎";
+    botonEdicion.onclick = alternarEdicionOutfits;
+
+    lista.appendChild(botonEdicion);
+
     outfitsGuardados.forEach((outfit, indice) => {
 
         const elemento = document.createElement("div");
 
-        elemento.innerHTML = `
-    <span>♡ ${outfit.nombre}</span>
-    <button onclick="usarOutfit(${indice})">Usar</button>
-    <button onclick="eliminarOutfit(${indice})">⌫</button>
-`;
-        
+        if (outfitsEditando) {
+
+            elemento.innerHTML = `
+                <span>♡ ${outfit.nombre}</span>
+                <button onclick="editarNombreOutfit(${indice})">✐</button>
+                <button onclick="eliminarOutfit(${indice})">⌫</button>
+            `;
+
+        } else {
+
+            elemento.innerHTML = `
+                <span>♡ ${outfit.nombre}</span>
+                <button onclick="usarOutfit(${indice})">Usar</button>
+            `;
+
+        }
+
         lista.appendChild(elemento);
     });
         }
+
+        function alternarEdicionOutfits() {
+
+    outfitsEditando = !outfitsEditando;
+
+    mostrarOutfits();
+}
+
+function editarNombreOutfit(indice) {
+
+    const outfit = outfitsGuardados[indice];
+
+    const nuevoNombre = prompt(
+        "Nuevo nombre para el outfit:",
+        outfit.nombre
+    );
+
+    if (nuevoNombre === null) return;
+
+    const nombreLimpio = nuevoNombre.trim();
+
+    if (nombreLimpio === "") return;
+
+    outfit.nombre = nombreLimpio;
+
+    localStorage.setItem(
+        "outfitsGuardados",
+        JSON.stringify(outfitsGuardados)
+    );
+
+    mostrarOutfits();
+}
 
         function eliminarOutfit(indice) {
 
