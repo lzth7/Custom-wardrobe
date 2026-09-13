@@ -2374,11 +2374,12 @@ function buscarPrenda() {
     };
 
     if (personaje.conjuntos > 0) {
-        mostrarOpcion("conjuntos", personaje.conjuntos);
-    } else {
-        mostrarOpcion("arriba", personaje.arriba);
-        mostrarOpcion("abajo", personaje.abajo);
-    }
+    mostrarOpcion("conjuntos", personaje.conjuntos);
+} else {
+    document.getElementById("prenda-conjunto").src = "";
+    mostrarOpcion("arriba", personaje.arriba);
+    mostrarOpcion("abajo", personaje.abajo);
+        }
 
     mostrarOpcion("cabello", personaje.cabello);
     mostrarOpcion("zapatos", personaje.zapatos);
