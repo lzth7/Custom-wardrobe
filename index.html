@@ -2311,6 +2311,19 @@ function buscarPrenda() {
 
         function guardarOutfit() {
 
+      const hayAlgo =
+    personaje.cabello > 0 ||
+    personaje.arriba > 0 ||
+    personaje.abajo > 0 ||
+    personaje.conjuntos > 0 ||
+    personaje.zapatos > 0 ||
+    personaje.accesorios > 0;
+
+if (!hayAlgo) {
+    alert("No puedes guardar un outfit vacío ✨");
+    return;
+}
+            
     const nuevoOutfit = {
         nombre: "Outfit " + (outfitsGuardados.length + 1),
 
