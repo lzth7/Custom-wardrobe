@@ -2323,7 +2323,23 @@ if (!hayAlgo) {
     alert("No puedes guardar un outfit vacío ✨");
     return;
 }
-            
+
+const yaExiste = outfitsGuardados.some(outfit =>
+
+    outfit.personaje.cabello === personaje.cabello &&
+    outfit.personaje.arriba === personaje.arriba &&
+    outfit.personaje.abajo === personaje.abajo &&
+    outfit.personaje.conjuntos === personaje.conjuntos &&
+    outfit.personaje.zapatos === personaje.zapatos &&
+    outfit.personaje.accesorios === personaje.accesorios
+
+);
+
+if (yaExiste) {
+    alert("Este outfit ya está guardado ✨");
+    return;
+}
+        
     const nuevoOutfit = {
         nombre: "Outfit " + (outfitsGuardados.length + 1),
 
