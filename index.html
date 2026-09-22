@@ -671,6 +671,41 @@ button:active {
         inset 0 2px 4px rgba(255, 255, 255, 0.8),
         inset 0 -2px 3px rgba(112, 69, 140, 0.16);
    }     
+
+    #lista-outfits {
+    margin-top: 12px;
+}
+
+#lista-outfits > button:first-child {
+    display: block;
+    width: 34px;
+    height: 34px;
+    margin: 0 0 10px auto;
+    padding: 0;
+}
+
+#lista-outfits > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 7px;
+    padding: 7px 9px;
+    border-radius: 12px;
+}
+
+#lista-outfits > div span {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#lista-outfits > div button {
+    flex-shrink: 0;
+}
         
     </style>
 </head>
