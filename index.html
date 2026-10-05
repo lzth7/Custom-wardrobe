@@ -840,6 +840,7 @@ button:active {
                     <button onclick="cambiarOpcion('abajo', 4)">Short blanco</button>
                     <button onclick="cambiarOpcion('abajo', 5)">Falda negra</button>
                     <button onclick="cambiarOpcion('abajo', 6)">Pijama gris</button>
+                    <button onclick="cambiarOpcion('abajo', 7)">Falda gris cargo</button>
                 </div>
             </div>
 
@@ -1601,6 +1602,19 @@ function cambiarTamano(valor) {
             personaje.conjuntos = 0;
         }
         }
+
+        if (opcion === 7) {
+        if (prenda.src.includes("BackgroundEraser_20261005_151122302.png")) {
+            prenda.src = "";
+            personaje.abajo = 0;
+        } else {
+            prenda.src = "BackgroundEraser_20261005_151122302.png";
+            personaje.abajo = 7;
+
+            conjunto.src = "";
+            personaje.conjuntos = 0;
+        }
+        }
     }
             
             if (categoria === "conjuntos") {
@@ -2034,6 +2048,10 @@ actualizarPrendasSeleccionadas();
         if (opcion === 6) {
             prenda.src = "BackgroundEraser_20260907_002354824.png";
         }    
+
+        if (opcion === 7) {
+            prenda.src = "BackgroundEraser_20261005_151122302.png";
+        }    
     }
 
 if (categoria === "conjuntos") {
@@ -2171,6 +2189,7 @@ function buscarPrenda() {
         { nombre: "Short blanco", categoria: "abajo", opcion: 4 },
         { nombre: "Falda negra", categoria: "abajo", opcion: 5 },
         { nombre: "Pijama gris", categoria: "abajo", opcion: 6 },
+        { nombre: "Falda gris cargo", categoria: "abajo", opcion: 7 },
 
         { nombre: "Vestido verde", categoria: "conjuntos", opcion: 1 },
         { nombre: "Vestido amarillo", categoria: "conjuntos", opcion: 2 },
@@ -2530,7 +2549,7 @@ function editarNombreOutfit(indice) {
         document.getElementById("prenda-conjunto").src = "";
         
         personaje.arriba = Math.floor(Math.random() * 7) + 1;
-        personaje.abajo = Math.floor(Math.random() * 6) + 1;
+        personaje.abajo = Math.floor(Math.random() * 7) + 1;
 
     }
 
