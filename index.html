@@ -934,6 +934,38 @@ button:active {
 
                 </div>      
 
+            <div class="categoria eventos">
+
+    <h2>✦ Eventos ✦</h2>
+
+    <div class="carrusel">
+
+        <button class="flecha" onclick="moverEvento(-1)">
+            ❮
+        </button>
+
+        <div class="ventana-carrusel">
+
+            <div class="botones" id="botones-eventos">
+
+                <button onclick="abrirEvento('halloween')">
+                    🎃 Halloween
+                </button>
+
+            </div>
+
+        </div>
+
+        <button class="flecha" onclick="moverEvento(1)">
+            ❯
+        </button>
+
+    </div>
+
+    <div id="contenido-evento"></div>
+
+            </div>    
+
 <div id="menu-capas" class="menu-capas">
     
    <h3 class="titulo-ajustes">
@@ -2731,6 +2763,25 @@ function moverCarrusel(categoria, direccion) {
     botones.style.transform =
         `translateX(-${desplazamiento}px)`;
         }
+
+        let eventoActivo = null;
+
+function abrirEvento(evento) {
+
+    const contenido = document.getElementById("contenido-evento");
+
+    if (eventoActivo === evento) {
+        contenido.innerHTML = "";
+        eventoActivo = null;
+        return;
+    }
+
+    eventoActivo = evento;
+
+    if (evento === "halloween") {
+        mostrarHalloween();
+    }
+}
 
 function cambiarFondo(fondo) {
     const zona = document.querySelector(".zona-personaje");
