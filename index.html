@@ -2783,6 +2783,143 @@ function abrirEvento(evento) {
     }
 }
 
+function mostrarHalloween() {
+
+    const contenido =
+        document.getElementById("contenido-evento");
+
+    contenido.innerHTML = `
+        <div class="evento-contenido">
+
+            <h3>☾ Halloween ☽</h3>
+
+            <div class="carrusel">
+
+                <button class="flecha" onclick="moverEvento(-1)">
+                    ❮
+                </button>
+
+                <div class="ventana-carrusel">
+                    <div id="botones-eventos">
+
+                        <button onclick="mostrarPersonajeEvento('diabla')">
+                            😈 Diabla
+                        </button>
+
+                        <button onclick="mostrarPersonajeEvento('vampira')">
+                            🧛 Vampira
+                        </button>
+
+                        <button onclick="mostrarPersonajeEvento('fantasma')">
+                            👻 Fantasma
+                        </button>
+
+                        <button onclick="mostrarPersonajeEvento('bruja')">
+                            🧙 Bruja
+                        </button>
+
+                        <button onclick="mostrarPersonajeEvento('calabaza')">
+                            🎃 Calabaza
+                        </button>
+
+                    </div>
+                </div>
+
+                <button class="flecha" onclick="moverEvento(1)">
+                    ❯
+                </button>
+
+            </div>
+
+            <div id="contenido-personaje-evento"></div>
+
+        </div>
+    `;
+        }
+
+let posicionEvento = 0;
+
+function moverEvento(direccion) {
+
+    const botones =
+        document.getElementById("botones-eventos");
+
+    if (!botones) return;
+
+    const cantidad = botones.children.length;
+    const visibles = 2;
+
+    const maximo =
+        Math.max(0, cantidad - visibles);
+
+    posicionEvento += direccion;
+
+    if (posicionEvento < 0) {
+        posicionEvento = 0;
+    }
+
+    if (posicionEvento > maximo) {
+        posicionEvento = maximo;
+    }
+
+    const anchoBoton =
+        botones.children[0].offsetWidth;
+
+    const espacio = 10;
+
+    const desplazamiento =
+        posicionEvento * (anchoBoton + espacio);
+
+    botones.style.transform =
+        `translateX(-${desplazamiento}px)`;
+}
+
+function mostrarPersonajeEvento(evento) {
+
+    const contenido =
+        document.getElementById("contenido-personaje-evento");
+
+    if (evento === "diabla") {
+
+        contenido.innerHTML = `
+            <h4>😈 Diabla</h4>
+            <p>Prendas de Diabla aquí</p>
+        `;
+    }
+
+    if (evento === "vampira") {
+
+        contenido.innerHTML = `
+            <h4>🧛 Vampira</h4>
+            <p>Prendas de Vampira aquí</p>
+        `;
+    }
+
+    if (evento === "fantasma") {
+
+        contenido.innerHTML = `
+            <h4>👻 Fantasma</h4>
+            <p>Prendas de Fantasma aquí</p>
+        `;
+    }
+
+    if (evento === "bruja") {
+
+        contenido.innerHTML = `
+            <h4>🧙 Bruja</h4>
+            <p>Prendas de Bruja aquí</p>
+        `;
+    }
+
+    if (evento === "calabaza") {
+
+        contenido.innerHTML = `
+            <h4>🎃 Calabaza</h4>
+            <p>Prendas de Calabaza aquí</p>
+        `;
+    }
+}
+        
 function cambiarFondo(fondo) {
     const zona = document.querySelector(".zona-personaje");
 
