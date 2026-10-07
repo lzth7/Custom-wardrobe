@@ -710,6 +710,20 @@ button:active {
 #lista-outfits > div span {
     text-align: left;
 }
+
+.personaje-evento h4 {
+    margin: 18px 0 8px;
+    color: #d96b27;
+    font-family: 'Creepster', cursive;
+    font-size: 22px;
+}
+
+.botones-evento {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}        
         
     </style>
 </head>
@@ -2789,136 +2803,131 @@ function mostrarHalloween() {
         document.getElementById("contenido-evento");
 
     contenido.innerHTML = `
+
         <div class="evento-contenido">
 
             <h3>☾ Halloween ☽</h3>
 
-            <div class="carrusel">
+            <div class="personaje-evento">
 
-                <button class="flecha" onclick="moverEvento(-1)">
-                    ❮
-                </button>
+                <h4>😈 Diabla</h4>
 
-                <div class="ventana-carrusel">
-                    <div id="botones-eventos">
+                <div class="botones-evento">
+                    <button onclick="cambiarOpcion('cabello', X)">
+                        Cabello
+                    </button>
 
-                        <button onclick="mostrarPersonajeEvento('diabla')">
-                            😈 Diabla
-                        </button>
+                    <button onclick="cambiarOpcion('conjuntos', X)">
+                        Vestido
+                    </button>
 
-                        <button onclick="mostrarPersonajeEvento('vampira')">
-                            🧛 Vampira
-                        </button>
+                    <button onclick="cambiarOpcion('zapatos', X)">
+                        Botas altas
+                    </button>
 
-                        <button onclick="mostrarPersonajeEvento('fantasma')">
-                            👻 Fantasma
-                        </button>
-
-                        <button onclick="mostrarPersonajeEvento('bruja')">
-                            🧙 Bruja
-                        </button>
-
-                        <button onclick="mostrarPersonajeEvento('calabaza')">
-                            🎃 Calabaza
-                        </button>
-
-                    </div>
+                    <button onclick="cambiarOpcion('accesorios', X)">
+                        Accesorios
+                    </button>
                 </div>
 
-                <button class="flecha" onclick="moverEvento(1)">
-                    ❯
-                </button>
+
+                <h4>🧛 Vampira</h4>
+
+                <div class="botones-evento">
+                    <button onclick="cambiarOpcion('cabello', X)">
+                        Cabello
+                    </button>
+
+                    <button onclick="cambiarOpcion('conjuntos', X)">
+                        Vestido
+                    </button>
+
+                    <button onclick="cambiarOpcion('zapatos', X)">
+                        Tacones
+                    </button>
+
+                    <button onclick="cambiarOpcion('accesorios', X)">
+                        Collar
+                    </button>
+                </div>
+
+
+                <h4>👻 Fantasma</h4>
+
+                <div class="botones-evento">
+                    <button onclick="cambiarOpcion('cabello', X)">
+                        Cabello
+                    </button>
+
+                    <button onclick="cambiarOpcion('conjuntos', X)">
+                        Suéter-vestido
+                    </button>
+
+                    <button onclick="cambiarOpcion('zapatos', X)">
+                        Botas
+                    </button>
+
+                    <button onclick="cambiarOpcion('accesorios', X)">
+                        Bolso
+                    </button>
+                </div>
+
+
+                <h4>🧙 Bruja</h4>
+
+                <div class="botones-evento">
+                    <button onclick="cambiarOpcion('cabello', X)">
+                        Cabello
+                    </button>
+
+                    <button onclick="cambiarOpcion('arriba', X)">
+                        Camisa
+                    </button>
+
+                    <button onclick="cambiarOpcion('abajo', X)">
+                        Falda
+                    </button>
+
+                    <button onclick="cambiarOpcion('zapatos', X)">
+                        Tacones
+                    </button>
+
+                    <button onclick="cambiarOpcion('accesorios', X)">
+                        Sombrero
+                    </button>
+                </div>
+
+
+                <h4>🎃 Calabaza</h4>
+
+                <div class="botones-evento">
+                    <button onclick="cambiarOpcion('cabello', X)">
+                        Cabello
+                    </button>
+
+                    <button onclick="cambiarOpcion('arriba', X)">
+                        Top
+                    </button>
+
+                    <button onclick="cambiarOpcion('abajo', X)">
+                        Falda
+                    </button>
+
+                    <button onclick="cambiarOpcion('zapatos', X)">
+                        Botas
+                    </button>
+
+                    <button onclick="cambiarOpcion('accesorios', X)">
+                        Boina
+                    </button>
+                </div>
 
             </div>
-
-            <div id="contenido-personaje-evento"></div>
 
         </div>
     `;
         }
-
-let posicionEvento = 0;
-
-function moverEvento(direccion) {
-
-    const botones =
-        document.getElementById("botones-eventos");
-
-    if (!botones) return;
-
-    const cantidad = botones.children.length;
-    const visibles = 2;
-
-    const maximo =
-        Math.max(0, cantidad - visibles);
-
-    posicionEvento += direccion;
-
-    if (posicionEvento < 0) {
-        posicionEvento = 0;
-    }
-
-    if (posicionEvento > maximo) {
-        posicionEvento = maximo;
-    }
-
-    const anchoBoton =
-        botones.children[0].offsetWidth;
-
-    const espacio = 10;
-
-    const desplazamiento =
-        posicionEvento * (anchoBoton + espacio);
-
-    botones.style.transform =
-        `translateX(-${desplazamiento}px)`;
-}
-
-function mostrarPersonajeEvento(evento) {
-
-    const contenido =
-        document.getElementById("contenido-personaje-evento");
-
-    if (evento === "diabla") {
-
-        contenido.innerHTML = `
-            <h4>😈 Diabla</h4>
-            <p>Prendas de Diabla aquí</p>
-        `;
-    }
-
-    if (evento === "vampira") {
-
-        contenido.innerHTML = `
-            <h4>🧛 Vampira</h4>
-            <p>Prendas de Vampira aquí</p>
-        `;
-    }
-
-    if (evento === "fantasma") {
-
-        contenido.innerHTML = `
-            <h4>👻 Fantasma</h4>
-            <p>Prendas de Fantasma aquí</p>
-        `;
-    }
-
-    if (evento === "bruja") {
-
-        contenido.innerHTML = `
-            <h4>🧙 Bruja</h4>
-            <p>Prendas de Bruja aquí</p>
-        `;
-    }
-
-    if (evento === "calabaza") {
-
-        contenido.innerHTML = `
-            <h4>🎃 Calabaza</h4>
-            <p>Prendas de Calabaza aquí</p>
-        `;
-    }
-}
+        }
         
 function cambiarFondo(fondo) {
     const zona = document.querySelector(".zona-personaje");
