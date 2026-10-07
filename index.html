@@ -736,7 +736,35 @@ button:active {
     gap: 8px;
     margin-bottom: 10px;
 }     
-        
+
+.carrusel-prendas {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.ventana-prendas {
+    flex: 1;
+    overflow-x: hidden;
+    min-width: 0;
+}
+
+.ventana-prendas .botones-evento {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: 10px;
+    margin: 0;
+}
+
+.flecha-prenda {
+    flex-shrink: 0;
+    width: 38px;
+    min-width: 38px;
+    padding: 0;
+}
+     
     </style>
 </head>
 
@@ -2825,12 +2853,30 @@ function mostrarHalloween() {
 
                 <h4>😈 Diabla</h4>
 
-                <div class="botones-evento">
-                    <button>Cabello</button>
-                    <button>Vestido</button>
-                    <button>Botas altas</button>
-                    <button>Accesorios</button>
-                </div>
+                <div class="carrusel-prendas">
+
+    <button
+        class="flecha-prenda"
+        onclick="deslizarPrendas('diabla', -1)">
+        ❮
+    </button>
+
+    <div class="ventana-prendas" id="prendas-diabla">
+        <div class="botones-evento">
+            <button>Cabello</button>
+            <button>Vestido</button>
+            <button>Botas altas</button>
+            <button>Accesorios</button>
+        </div>
+    </div>
+
+    <button
+        class="flecha-prenda"
+        onclick="deslizarPrendas('diabla', 1)">
+        ❯
+    </button>
+
+</div>
 
 
                 <h4>🧛 Vampira</h4>
@@ -2878,6 +2924,19 @@ function mostrarHalloween() {
 
         </div>
     `;
+     }
+
+     function deslizarPrendas(personaje, direccion) {
+
+    const ventana =
+        document.getElementById("prendas-" + personaje);
+
+    if (!ventana) return;
+
+    ventana.scrollBy({
+        left: direccion * 220,
+        behavior: "smooth"
+    });
      }
         
 function cambiarFondo(fondo) {
