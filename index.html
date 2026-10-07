@@ -724,6 +724,18 @@ button:active {
     gap: 8px;
     margin-bottom: 12px;
 }        
+
+.personaje-evento h4 {
+    margin: 20px 0 8px;
+    font-size: 24px;
+}
+
+.botones-evento {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+}     
         
     </style>
 </head>
@@ -2803,19 +2815,70 @@ function mostrarHalloween() {
         document.getElementById("contenido-evento");
 
     contenido.innerHTML = `
+
         <div class="evento-contenido">
 
             <h3>☾ Halloween ☽</h3>
 
-            <h4>😈 Diabla</h4>
-            <h4>🧛 Vampira</h4>
-            <h4>👻 Fantasma</h4>
-            <h4>🧙 Bruja</h4>
-            <h4>🎃 Calabaza</h4>
+
+            <div class="personaje-evento">
+
+                <h4>😈 Diabla</h4>
+
+                <div class="botones-evento">
+                    <button>Cabello</button>
+                    <button>Vestido</button>
+                    <button>Botas altas</button>
+                    <button>Accesorios</button>
+                </div>
+
+
+                <h4>🧛 Vampira</h4>
+
+                <div class="botones-evento">
+                    <button>Cabello</button>
+                    <button>Vestido</button>
+                    <button>Tacones</button>
+                    <button>Collar</button>
+                </div>
+
+
+                <h4>👻 Fantasma</h4>
+
+                <div class="botones-evento">
+                    <button>Cabello</button>
+                    <button>Suéter-vestido</button>
+                    <button>Botas</button>
+                    <button>Bolso</button>
+                </div>
+
+
+                <h4>🧙 Bruja</h4>
+
+                <div class="botones-evento">
+                    <button>Cabello</button>
+                    <button>Camisa</button>
+                    <button>Falda</button>
+                    <button>Tacones</button>
+                    <button>Sombrero</button>
+                </div>
+
+
+                <h4>🎃 Calabaza</h4>
+
+                <div class="botones-evento">
+                    <button>Cabello</button>
+                    <button>Top</button>
+                    <button>Falda</button>
+                    <button>Botas</button>
+                    <button>Boina</button>
+                </div>
+
+            </div>
 
         </div>
     `;
-        }
+     }
         
 function cambiarFondo(fondo) {
     const zona = document.querySelector(".zona-personaje");
