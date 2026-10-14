@@ -749,6 +749,7 @@ button:active {
         0 8px 20px rgba(0, 0, 0, 0.18);
 }
           
+
 .carrusel-prendas {
     display: flex;
     align-items: center;
@@ -758,8 +759,13 @@ button:active {
 
 .ventana-prendas {
     flex: 1;
-    overflow-x: hidden;
     min-width: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.ventana-prendas::-webkit-scrollbar {
+    display: none;
 }
 
 .ventana-prendas .botones-evento {
@@ -769,7 +775,7 @@ button:active {
     gap: 10px;
     margin: 0;
 }
-
+     
 .flecha-prenda {
     width: 38px;
     height: 38px;
