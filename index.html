@@ -847,6 +847,16 @@ button:active {
     color: #D945A5;
     text-shadow: 0 0 8px rgba(160, 100, 220, 0.35);
 }     
+
+#boton-halloween.evento-abierto {
+    background: #3A0F5C !important;
+    background-image: none !important;
+    color: #D945A5 !important;
+    font-family: 'Nosifer', cursive !important;
+    font-style: normal !important;
+    border: 1px solid #8050A5;
+    box-shadow: 0 0 12px rgba(105, 54, 150, 0.45);
+}
      
     </style>
 </head>
@@ -1085,8 +1095,8 @@ button:active {
 
             <div class="botones" id="botones-eventos">
 
-                <button onclick="abrirEvento('halloween')">
-                    𔓎 Halloween
+                <button id="boton-halloween" onclick="abrirEvento('halloween')">
+    𔓎 Halloween
                 </button>
 
             </div>
@@ -2903,17 +2913,26 @@ function moverCarrusel(categoria, direccion) {
 
         let eventoActivo = null;
 
+let eventoActivo = null;
+
 function abrirEvento(evento) {
 
     const contenido = document.getElementById("contenido-evento");
+    const botonHalloween = document.getElementById("boton-halloween");
 
     if (eventoActivo === evento) {
         contenido.innerHTML = "";
         eventoActivo = null;
+        botonHalloween.classList.remove("evento-abierto");
         return;
     }
 
     eventoActivo = evento;
+
+    botonHalloween.classList.toggle(
+        "evento-abierto",
+        evento === "halloween"
+    );
 
     if (evento === "halloween") {
         mostrarHalloween();
